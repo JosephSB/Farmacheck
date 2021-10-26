@@ -64,7 +64,6 @@
 .Modal{
     width: 100%;
     max-width: 600px;
-    min-height: 300px;
     background-color: white;
     padding: 50px;
     position: relative;
