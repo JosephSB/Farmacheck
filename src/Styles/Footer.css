@@ -1,0 +1,17 @@
+
+.footer{
+    background: rgb(4,112,127);
+    background: linear-gradient(0deg, rgba(4,112,127,1) 0%, rgba(31,152,169,1) 100%);
+    width: 100%;
+    min-height: 100px;
+}
+.Footer-parrafo{
+    color: white;
+    font-family: canada-type-gibson, sans-serif;
+    text-align: center;
+    font-size: 16px;
+}
+.Img-Footer{
+    width: 50%;
+    max-width: 151px;
+}

@@ -1,0 +1,27 @@
+@media screen and (max-width:800px){
+    .Header,.Menu{
+        flex-direction: column;
+    }
+    .Box-Tools{
+        justify-content: space-evenly;
+        padding:0;
+    }
+    .Menu{
+        padding:0;
+        height: 100vh;
+        justify-content: flex-start;
+        position: fixed;
+        top: 100px;
+        transform: translateX(-100%);
+        transition: transform .3s;
+    }
+    .Menu-link{
+        margin: 20px 0;
+    }
+    .bar-responsive{
+        display: flex;
+    }
+    .traslate0{
+        transform: translateX(0);
+    }
+}

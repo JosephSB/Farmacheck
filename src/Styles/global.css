@@ -1,0 +1,93 @@
+:root{
+    --PrimaryCorlor: #2099AA;
+    --SecondaryCorlor: #5E6061;
+}
+
+@font-face {
+    font-family: canada-type-gibson;
+    src: local('canada-type-gibson'),url(../Fonts/Canada-Type-Gibson-Regular.ttf);
+}
+@font-face {
+    font-family: gibson-bold;
+    src: local('gibson-bold'),url(../Fonts/Canada-Type-Gibson-Bold.ttf) ;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.space-around{
+    justify-content: space-around;
+}
+.space-between{
+    justify-content: space-between;
+}
+.space-evenly{
+    justify-content: space-evenly;
+}
+.start{
+    display: flex;
+    justify-content: flex-start;
+}
+.start-y{
+    display: flex;
+    align-items: flex-start;
+}
+.bor-bottom{
+    border-bottom: 1px solid var(--SecondaryCorlor);
+    cursor: pointer;
+}
+.gibson{
+    font-family: canada-type-gibson;
+}
+.gib-bol{
+    font-family: gibson-bold;
+}
+.size-26{
+    font-size: 26px;
+}
+.size-45{
+    font-size: 45px;
+}
+.m-top{
+    margin: 20px 0;
+}
+.m-none{
+    margin:0;
+}
+.Error{
+    font-family: canada-type-gibson;
+    font-size: 16px;
+    color: firebrick;
+}
+.max-width{
+    width: 100%;
+}
+.padding-lateral{
+    padding: 0 20px;
+}
+.none{
+    display: none;
+}
+.color-grey{
+    color: var(--SecondaryCorlor);
+}
+.color-white{
+    color: white;
+}
+.color-cyan,.ACTIVE{
+    color: var(--PrimaryCorlor);
+}

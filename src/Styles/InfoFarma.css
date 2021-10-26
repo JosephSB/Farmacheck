@@ -1,0 +1,103 @@
+.Banner-2{
+    padding-top: 100px;
+    width: 100%;
+    background-image: url('../Assets/FONDO.png');
+    background-size: cover;
+    background-color: #2099AA;
+}
+.Banner-Info{
+    width: 100%;
+    max-width: 470px;
+    margin: 20px;
+}
+.Banner2-Title,.Banner2-parrafo{
+    color: white;
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 38px;
+}
+.Banner2-parrafo{
+    font-size: 16px;
+    margin: 20px 0;
+    line-height: 1.5rem;
+}
+.Banner2-Img{
+    width: 100%;
+    max-width: 500px;
+}
+.Quiz{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.Quiz-Subtitle,.Reporte-Title{
+    color: #2099AA;
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 28px;
+    margin: 30px 0;
+}
+.Content-Quiz{
+    width: 100%;
+    max-width: 680px;
+    min-height: 30px;
+    max-height: 50px;
+    margin: 20px 0 0 0;
+    border: 1px solid #2099AA;
+    background-color: white;
+}
+.Quiz-Parrafo,.Quiz-BigParrafo{
+    color: #2099AA;
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 14px;
+}
+.Quiz-BigParrafo{
+    font-size: 36px;
+    margin: 20px 0;
+}
+.Section-Skills{
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+.skill{
+    width: 180px;
+    height: 80px;
+    margin: 10px;
+}
+.skill-Subtitle,.skill-Subtitle--24{
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.skill-Subtitle--24{
+    font-size: 28px;
+    font-family: gibson-bold;
+}
+.Content-Info{
+    width: 100%;
+    max-width: 680px;
+    box-shadow: 0px -1px 9px -3px rgba(0,0,0,0.61);
+    transition: all .5s;
+    overflow:hidden;
+    transform: translateY(-20%);
+    z-index: -1;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.Info-Text{
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 14px;
+}
+.traslate0{
+    transform: translateY(0%);
+}
+.text-wrap{
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+}

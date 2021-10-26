@@ -1,0 +1,38 @@
+.Header{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    position: fixed;
+    z-index: 5;
+}
+.Box-Tools,.Menu{
+    width: 100%;
+    max-width: 500px;
+    padding: 0 20px;
+}
+.Img-Marcas{
+    margin: 0 10px;
+    width: 40%;
+    max-width: 132px;
+}
+.Menu{
+    max-width: 900px;
+    background-color: white;
+}
+.Menu-link{
+    text-decoration: none;
+    list-style: none;
+    font-family: canada-type-gibson;
+    color: var(--SecondaryCorlor);
+    font-size: 14px;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+.bar-responsive{
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+}
+.ACTIVE{
+    color: var(--PrimaryCorlor);
+}

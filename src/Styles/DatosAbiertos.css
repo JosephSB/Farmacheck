@@ -1,0 +1,105 @@
+.Quiz{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 10px;
+}
+.Quiz-Subtitle,.Reporte-Title{
+    color: var(--PrimaryCorlor);
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 28px;
+    margin: 30px 0;
+}
+.Info-Text{
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 14px;
+    line-height: 1.5rem;
+}
+.Content-DatosAbiertos{
+    padding-top: 100px;
+}
+.Content-DatosAbiertos,.Content-dowload,.Content-NotaMetodo{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.Download{
+    width: 100%;
+    max-width: 447px;
+    box-shadow: 0px -1px 9px -3px rgba(0,0,0,0.61);
+    height: 120px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.Download-Text{
+    font-family: gibson-bold, sans-serif;
+    font-size: 22px;
+    color: var(--PrimaryCorlor);
+    text-align: center;
+    margin: 5px;
+}
+.Btn-Download{
+    width: 100%;
+    max-width: 190px;
+    height: 28px;
+    outline: none;
+    border:none;
+    background-color: var(--PrimaryCorlor);
+    color: white;
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Box{
+    width: 100%;
+    max-width: 470px;
+    margin-bottom: 30px;
+}
+.Box-Info{
+    width: 100%;
+    margin: 20px 0;
+}
+
+.Content-Reporte{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding-top: 100px;
+}
+.Reporte-Title{
+    font-family: canada-type-gibson;
+    margin: 10px 0;
+    max-width: 600px;
+}
+.Noticia{
+    width: 100%;
+    max-width: 673px;
+}
+.Noticia-Aside{
+    width: 100%;
+    max-width: 327px;
+    margin: 0 auto;
+    background-color: #f5f4f4;
+}
+.Noticia-Extra{
+    width: 100%;
+    max-width: 295px;
+    margin: 20px 10px;
+}
+.Img-NoticiaExtra{
+    width: 100%;
+    max-width: 295px;
+}
+.Aside-Text{
+    font-family: gibson-bold, sans-serif;
+    font-size: 18px;
+    color: #2099AA;
+}
+@media screen and (max-width:1010px){
+    .Noticia-Aside{
+        max-width: 673px;
+    }
+}
