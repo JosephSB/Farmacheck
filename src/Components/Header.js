@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import LogoApeps from '../Assets/LOGO APEPS.png';
 import LogoAPESEG from '../Assets/LOGO APESEG.png';
 
-
 const Header = () =>{
     const [iconResp, setIconResp] = useState(true);
 
@@ -27,16 +26,16 @@ const Header = () =>{
                 </div>
             </div>
             <nav className={`Menu center space-between ${!iconResp?'traslate0':''}`}>
-                <NavLink onClick={handleClick} className="Menu-link" exact to="/INICIO" activeClassName="ACTIVE">
+                <NavLink onClick={handleClick} className="Menu-link" exact to="/Inicio" activeClassName="ACTIVE">
                     INICIO
                 </NavLink>
-                <NavLink onClick={handleClick} className="Menu-link" exact to="/INFORMACION" activeClassName="ACTIVE">
+                <NavLink onClick={handleClick} className="Menu-link" exact to="/Informacion" activeClassName="ACTIVE">
                     ¿QUE ES FARMACHECK?
                 </NavLink>
-                <NavLink onClick={handleClick} className="Menu-link" exact to="/REPORTES" activeClassName="ACTIVE">
+                <NavLink onClick={handleClick} className="Menu-link" exact to="/Reportes" activeClassName="ACTIVE">
                     REPORTE TRIMESTRAL
                 </NavLink>
-                <NavLink onClick={handleClick} className="Menu-link" exact to="/DATOS" activeClassName="ACTIVE">
+                <NavLink onClick={handleClick} className="Menu-link" exact to="/Datos" activeClassName="ACTIVE">
                     DATOS ABIERTOS
                 </NavLink>
             </nav>

@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from "react";
+import { useHistory } from "react-router-dom";
 import LOGOFARMA from '../Assets/LOGOFARMA.png';
 import '../Styles/Home.css';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
@@ -8,6 +9,9 @@ const Home = () =>{
     const [message, setMessage] = useState('');
     const [modal, setModal] = useState(false);
     const [compatible, setCompatible] = useState(true);
+
+    let history = useHistory();
+
     const {
         transcript,
         resetTranscript,
@@ -34,6 +38,10 @@ const Home = () =>{
         setMessage(transcript)
     }, [transcript]);
 
+    const search = (e) =>{
+        if(message !== "") history.push(`/Products/${message}`);
+    }
+
     const handleChange = (e) =>{
         setMessage(e.target.value)
     }
@@ -55,7 +63,7 @@ const Home = () =>{
                         <input className="Banner-Input--search" type="text" 
                         id="Input-search-product" value={message} onChange={handleChange}/>
                         <div className="Input-Tools search-input center space-evenly">
-                            <i className="fas fa-search"></i>
+                            <i className="fas fa-search" onClick={search}></i>
                             <i className="fas fa-microphone" onClick={RecordVoice}></i>
                         </div>
                     </div>

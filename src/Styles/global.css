@@ -17,6 +17,9 @@
     justify-content: center;
     align-items: center;
 }
+.textcenter{
+    text-align: center;
+}
 .wrap{
     display: flex;
     flex-wrap: wrap;
@@ -28,6 +31,9 @@
 .row{
     display: flex;
     flex-direction: row;
+}
+.pointer{
+    cursor: pointer;
 }
 .space-around{
     justify-content: space-around;
@@ -56,6 +62,9 @@
 .gib-bol{
     font-family: gibson-bold;
 }
+.size-16{
+    font-size: 16px;
+}
 .size-26{
     font-size: 26px;
 }
@@ -64,6 +73,12 @@
 }
 .m-top{
     margin: 20px 0;
+}
+.p-top{
+    padding: 20px 0;
+}
+.m-10{
+    margin: 10px 0;
 }
 .m-none{
     margin:0;
@@ -78,6 +93,7 @@
 }
 .padding-lateral{
     padding: 0 20px;
+    box-sizing: border-box;
 }
 .none{
     display: none;
@@ -91,3 +107,27 @@
 .color-cyan,.ACTIVE{
     color: var(--PrimaryCorlor);
 }
+.btn-defaul{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.preloader {
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #666;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

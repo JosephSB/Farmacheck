@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react';
 const Skill = (props) =>{
     const [score, setScore] = useState(0);
 
-    useEffect(() => {
+    const AnimateScore = () =>{
         let i = 0;
         let inter = setInterval(() => {
             i=i+100;
@@ -13,7 +13,9 @@ const Skill = (props) =>{
                 setScore(props.score)
             }
         }, 10);
-
+    }
+    useEffect(() => {
+        AnimateScore()
     }, []);
 
     return (

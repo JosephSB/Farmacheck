@@ -11,7 +11,7 @@ const Quiz = (props) =>{
             transition ? setTransition(false) : setTransition(true)
         }, 50);
     }
-
+    
     useEffect(() => {
         if(props.close !== props.data['id']){
             animate && setAnimate(false)

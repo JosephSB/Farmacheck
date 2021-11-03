@@ -82,8 +82,75 @@
     cursor: pointer;
 }
 .Input-Tools{
-    width: 40px;
+    width: 60px;
 }
 .Input-Tools i{
+    cursor: pointer;
+}
+
+.Btn-Back{
+    width: 100%;
+    max-width: 260px;
+    height: 41px;
+    border-radius: 5px;
+    background-color: white;
+    color: var(--PrimaryCorlor);
+    font-size: 20px;
+    text-decoration: none;
+    font-family:canada-type-gibson, sans-serif;
+    margin: 10px;
+    box-shadow: -4px 5px 15px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -4px 5px 15px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px 5px 15px -8px rgba(0,0,0,0.75);
+}
+
+.Content-Products{
+    width: 100%;
+    max-width: 600px;
+}
+.Option-Product{
+    width: 100%;
+    min-height: 40px;
+    margin:0 4px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: var(--SecondaryCorlor);
+    color: white;
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .5s;
+    z-index: 2;
+}
+.Option-Product:hover{
+    background-color: rgb(133, 133, 133);
+}
+.Options-Presentacion{
+    width: 100%;
+    background-color: #E6E4E5;
+    min-height: 50px;
+    border-radius: 5px;
+    transition: all .5s;
+    overflow:hidden;
+    transform: translateY(-20%);
+}
+.height-none{
+    height: auto;
+}
+.bg-cyan{
+    background-color: var(--PrimaryCorlor);
+}
+.bg-cyan:hover{
+    background-color: #1c8997;
+}
+.btn-verLugares{
+    height: 47px;
+    background-color: transparent;
+    color: var(--PrimaryCorlor);
+    font-size: 14px;
+    font-family: canada-type-gibson, sans-serif;
+    border: 1px solid var(--PrimaryCorlor);
+    border-radius: 5px;
     cursor: pointer;
 }
