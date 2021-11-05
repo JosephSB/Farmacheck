@@ -1,7 +1,11 @@
 import React,{useState,useEffect} from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const Skill = (props) =>{
     const [score, setScore] = useState(0);
+    const { ref, inView} = useInView({
+        threshold: 0.75,
+    });
 
     const AnimateScore = () =>{
         let i = 0;
@@ -12,14 +16,14 @@ const Skill = (props) =>{
                 clearInterval(inter)
                 setScore(props.score)
             }
-        }, 10);
+        }, 30);
     }
     useEffect(() => {
         AnimateScore()
-    }, []);
+    }, [inView === true]);
 
     return (
-        <div className="skill center">
+        <div className="skill center" ref={ref}>
             <img src={props.img} alt="Phone"/>
             <div className="column">
                 <p className="skill-Subtitle--24 color-cyan">

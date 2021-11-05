@@ -5,8 +5,10 @@ import { NavLink,useHistory } from 'react-router-dom';
 import { helpHttp } from '../Helpers/helpHttp';
 import Loader from '../Components/Loader';
 
+
 const SearchProduct = () =>{
     const [products, setProducts] = useState([]);
+    const [totalProducts, setTotalProducts] = useState();
     const [page, setPage] = useState(1);
     const [message, setMessage] = useState("");
     const [loader, setLoader] = useState(false);
@@ -14,10 +16,15 @@ const SearchProduct = () =>{
     const {product} = useParams();
     let history = useHistory();
 
+    const btnMoreProducts = (auxtotal) =>{
+        if(auxtotal < totalProducts) setMoreProducts(true)
+        else setMoreProducts(false)
+    }
+
     useEffect(() => {
         setLoader(true)
         const form = {
-            "keyCode": "aY0Jy2T6b6LLvMfBzI2pI5dPAfcqyvK",
+            "keyCode": process.env.REACT_APP_API_KEY_SERVICE,
             "firstResult": page,
             "maxResults": 6,
             "producto": product
@@ -26,16 +33,18 @@ const SearchProduct = () =>{
             body: form,
             headers: {"content-type": "application/json"}
         }
-        let url = "http://44.197.85.123:9080/buscador-precios/productos"
+
+        let url = process.env.REACT_APP_API_KEY_PRODUCTS
         helpHttp().post(url,options).then(res => {
             if(res.errorCode === 0){
                 setMessage(res.message)
                 if(res.productos !== null) setProducts(products.concat(res.productos))
-                //setProducts((products)=> [...products,res.productos])
                 else setMessage(`No se Encontro el producto ${product}`)
+
+                setTotalProducts(res.total)
+                btnMoreProducts(products.length)
+
                 setLoader(false)
-                if(products.length < res.total) setMoreProducts(true)
-                else setMoreProducts(false)
             }
         })
  
@@ -50,7 +59,7 @@ const SearchProduct = () =>{
     }
 
     return(
-        <section className={`Banner center column pad-responsive ${page > 1 && "height-none p-top"}`}>
+        <section className={`Banner center column pad-responsive ${totalProducts > 10 && "height-none p-top"}`}>
             <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
             <div className="center row wrap max-width m-top">
                 <NavLink className="Btn-Back center" exact to="/Inicio" activeClassName="ACTIVE">

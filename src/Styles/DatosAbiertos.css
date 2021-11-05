@@ -17,7 +17,9 @@
     line-height: 1.5rem;
 }
 .Content-DatosAbiertos{
+    padding: 0 10px;
     padding-top: 100px;
+    box-sizing: border-box;
 }
 .Content-DatosAbiertos,.Content-dowload,.Content-NotaMetodo{
     width: 100%;
@@ -33,8 +35,7 @@
     margin: 20px 0;
 }
 .Download-Text{
-    font-family: gibson-bold, sans-serif;
-    font-size: 22px;
+    font-size: 24px;
     color: var(--PrimaryCorlor);
     text-align: center;
     margin: 5px;
@@ -66,8 +67,9 @@
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-
+    padding: 0 10px;
     padding-top: 100px;
+    box-sizing: border-box;
 }
 .Reporte-Title{
     font-family: canada-type-gibson;

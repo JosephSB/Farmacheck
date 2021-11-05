@@ -16,11 +16,11 @@ const DatosAbiertos = () =>{
             </p>
             <div className="Content-dowload center wrap space-evenly">
                 <div className="Download center column space-evenly">
-                    <p className="Download-Text">Descarga de datos acumulados</p>
+                    <p className="Download-Text gibson">Descarga de datos acumulados</p>
                     <button className="Btn-Download">Descargar la información en CSV</button>
                 </div>
                 <div className="Download center column space-evenly">
-                    <p className="Download-Text">Descarga de datos trimestrales</p>
+                    <p className="Download-Text gibson">Descarga de datos trimestrales</p>
                     <button className="Btn-Download">Descargar la información en CSV</button>
                 </div>
             </div>

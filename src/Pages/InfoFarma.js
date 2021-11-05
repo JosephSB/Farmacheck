@@ -31,15 +31,16 @@ const InfoFarma = () =>{
             <section className="Quiz center column">
                 <h2 className="Quiz-Subtitle">Preguntas frecuentes</h2>
                 {question['quiz'].map(item => <Quiz key={item.id} data={item} close={close} setclose={setClose} />)}
+            </section>
+            <section className="Section-Skills center column wrap space-around">
                 <p className="Quiz-BigParrafo">
                     CIFRAS <strong>DESTACADAS</strong>
                 </p>
-            </section>
-            <section className="Section-Skills center wrap space-around">
+                <div className="max-width center row  wrap space-around">
                 <Skill img={icon} score={2000} descriptio={"descargas de app"} />
                 <Skill img={icon2} score={7000} descriptio={"medicamentos"}/>
                 <Skill img={icon3} score={18000} descriptio={"establecimientos analizados"}/>
-
+                </div>
             </section>
         </>
     )

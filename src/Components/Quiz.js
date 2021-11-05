@@ -21,11 +21,11 @@ const Quiz = (props) =>{
 
     return(
         <>
-            <div className="Content-Quiz center space-between" onClick={HandleQuiz}>
+            <div className="Content-Quiz center space-between padding-lateral" onClick={HandleQuiz}>
                 <p className="Quiz-Parrafo">
                     <strong> {props.data["quiz"]} </strong>
                 </p>
-                <i className="fas fa-caret-down color-cyan fa-2x" id="Quiz-btn"></i>
+                <i className="fas fa-caret-down color-cyan fa-2x"></i>
             </div>
             <div className={`Content-Info ${!animate &&'none'} ${transition ? 'traslate0' : ''}`}>
                 <p className="Info-Text text-wrap">

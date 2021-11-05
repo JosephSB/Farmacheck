@@ -9,6 +9,7 @@ import PresentacionProducto from '../Components/PresentacionProducto';
 const DetailProduct = ({setDataSearch}) =>{
     const {product} = useParams();
     let history = useHistory();
+    const [totaldetalles, setTotalDetalles] = useState();
     const [loader, setLoader] = useState(false);
     const [data, setData] = useState([]);
     const [message, setMessage] = useState("");
@@ -17,7 +18,7 @@ const DetailProduct = ({setDataSearch}) =>{
     useEffect(() => {
         setLoader(true)
         const form = {
-            "keyCode": "aY0Jy2T6b6LLvMfBzI2pI5dPAfcqyvK",
+            "keyCode": process.env.REACT_APP_API_KEY_SERVICE,
             "firstResult": 1,
             "maxResults": 10,
             "producto": product
@@ -26,13 +27,14 @@ const DetailProduct = ({setDataSearch}) =>{
             body: form,
             headers: {"content-type": "application/json"}
         }
-        let url = "http://44.197.85.123:9080/buscador-precios/detalle"
+        let url = process.env.REACT_APP_API_KEY_DETALLES
         helpHttp().post(url,options).then(res => {
             if(res.errorCode === 0){
                 setMessage(res.message)
-                if(res.presentaciones !== null || res.presentaciones.length !== 0) setData(res.presentaciones)
+                if(res.presentaciones !== null ) setData(res.presentaciones)
                 else setMessage(`No se encontro mas informacion del producto ${product}`)
                 setLoader(false)
+                setTotalDetalles(res.total)
                 if(res.presentaciones.length === 0)setMessage(`No se encontro mas informacion del producto ${product}`)
             }
         })
@@ -43,7 +45,7 @@ const DetailProduct = ({setDataSearch}) =>{
     }
 
     return(
-        <section className="Banner center column pad-responsive height-none p-top">
+        <section className={`Banner center column pad-responsive ${totaldetalles>5 && "height-none"} p-top`}>
             <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
             <div className="center row wrap max-width m-top">
                 <button className="Btn-Back center btn-defaul" onClick={goBack}>
