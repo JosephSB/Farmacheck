@@ -3,7 +3,7 @@ import	'./Styles/Header.css';
 import './App.css';
 import './Styles/global.css';
 import "./Styles/Responsive.css";
-import MainRouter from './Components/MainRouter';
+import MainRouter from './Router/MainRouter';
 
 function App() {
   return (

@@ -7,8 +7,8 @@ import InfoFarma from '../Pages/InfoFarma';
 import PriceProduct from '../Pages/PriceProduct';
 import Reportes from '../Pages/Reportes';
 import SearchProduct from '../Pages/SearchProduct';
-import Footer from './Footer';
-import Header from './Header';
+import Footer from '../Components/Footer';
+import Header from '../Components/Header';
 
 const dataDefault ={
     presentacion: "",
