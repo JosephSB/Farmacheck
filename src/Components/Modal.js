@@ -7,7 +7,7 @@ const Modal = (props) => {
     }
     return(
         <div className="Content-Modal center">
-            <div className="Modal">
+            <div className="Modal aparecer">
                 <p className="Modal-parraf">
                     FarmaCheck es un buscador de precios referenciales de medicamentos que te ayudará a tomar una decisión de compra informada.
                 </p>

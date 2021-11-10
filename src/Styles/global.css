@@ -25,6 +25,9 @@
 .textcenter{
     text-align: center;
 }
+.textstart{
+    text-align: start;
+}
 .wrap{
     display: flex;
     flex-wrap: wrap;
@@ -66,6 +69,9 @@
 }
 .gib-bol{
     font-family: gibson-bold;
+}
+.size-12{
+    font-size: 12px;
 }
 .size-16{
     font-size: 16px;
@@ -120,6 +126,7 @@
 .relative{
     position: relative;
 }
+
 .aparecer{
     animation: aparecer 1s;
 }

@@ -3,6 +3,7 @@
     height: 100%;
     padding: 0 10px;
     padding-top: 100px;
+    padding-bottom: 80px;
     min-height: 800px;
     background-image: url('../Assets/FONDO.png');
     background-size: cover;
@@ -49,6 +50,7 @@
     outline: none;
     border: none;
     padding: 0 20px;
+    padding-right: 60px;
     box-sizing: border-box;
     border-radius: 5px;
     color: var(--SecondaryCorlor);
@@ -117,8 +119,7 @@
 .Content-Products{
     width: 100%;
     max-width: 600px;
-    padding: 10px;
-    box-sizing: border-box;
+
 }
 .Option-Product{
     width: 100%;
@@ -166,29 +167,51 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.Box-ProductDetail{
+    padding: 10px;
+    width: calc(100% - 70px);
+}
 
 .Item-Locate{
-    position: absolute;
-    right: -10px;
-    top: 0;
     padding: 10px;
     box-sizing: border-box;
     background-color: var(--PrimaryCorlor);
     border-radius: 30px;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     color: white;
     cursor: pointer;
 }
+.Text-ProductName{
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    max-width: 400px;
+}
+.Item-Locate:hover:after{
+    content: "Ver lugares de compra";
+    width: 70px;
+    font-size:  canada-type-gibson, sans-serif;
+    position: absolute;
+    font-size: 10px;
+    text-align: center;
+    bottom: 0px;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: all 0.5s;
+    background-color: var(--PrimaryCorlor);
+}
 
-@media screen and (max-width:400px){
-    .Item-Locate{
-        right: 0;
-        top: 50%;
-        transform: translate(0, -50%);
+@media screen and (max-width:430px){
+    .Text-ProductName{
+        max-width: 200px;
     }
-    .product-responsive{
+}
+
+
+@media screen and (max-width:300px){
+    .Box-ProductDetail{
         flex-direction: column;
-        align-items: start;
+        align-items: flex-start;
     }
 }

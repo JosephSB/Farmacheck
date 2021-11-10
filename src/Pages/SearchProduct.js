@@ -8,7 +8,6 @@ import Loader from '../Components/Loader';
 
 const SearchProduct = () =>{
     const [products, setProducts] = useState([]);
-    const [totalProducts, setTotalProducts] = useState();
     const [page, setPage] = useState(1);
     const [message, setMessage] = useState("");
     const [loader, setLoader] = useState(false);
@@ -16,8 +15,8 @@ const SearchProduct = () =>{
     const {product} = useParams();
     let history = useHistory();
 
-    const btnMoreProducts = (auxtotal) =>{
-        if(auxtotal < totalProducts) setMoreProducts(true)
+    const BtnMoreProducts = async (totalArreglo,total) =>{
+        if(totalArreglo < total) setMoreProducts(true)
         else setMoreProducts(false)
     }
 
@@ -38,11 +37,11 @@ const SearchProduct = () =>{
         helpHttp().post(url,options).then(res => {
             if(res.errorCode === 0){
                 setMessage(res.message)
-                if(res.productos !== null) setProducts(products.concat(res.productos))
+                let aux = products.concat(res.productos);
+                if(res.productos !== null) setProducts(aux)
                 else setMessage(`No se Encontro el producto ${product}`)
 
-                setTotalProducts(res.total)
-                btnMoreProducts(products.length)
+                BtnMoreProducts(aux.length,res.total)
 
                 setLoader(false)
             }
@@ -59,7 +58,7 @@ const SearchProduct = () =>{
     }
 
     return(
-        <section className={`Banner center column pad-responsive ${totalProducts > 10 && "height-none p-top"}`}>
+        <section className={`Banner center column pad-responsive ${products.length> 12 && "height-none p-top"}`}>
             <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
             <div className="center row wrap max-width m-top">
                 <NavLink className="Btn-Back center" exact to="/Inicio" activeClassName="ACTIVE">

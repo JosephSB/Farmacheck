@@ -8,9 +8,9 @@ const Skill = (props) =>{
     });
 
     const AnimateScore = () =>{
-        let i = 0;
+        let i = props.scoremin;
         let inter = setInterval(() => {
-            i=i+100;
+            i=i+50;
             setScore(i)
             if(i>props.score){
                 clearInterval(inter)
@@ -23,7 +23,7 @@ const Skill = (props) =>{
     }, [inView === true]);
 
     return (
-        <div className="skill center" ref={ref}>
+        <div className={`skill center ${inView === true && "aparecer"}`} ref={ref}>
             <img src={props.img} alt="Phone"/>
             <div className="column">
                 <p className="skill-Subtitle--24 color-cyan">

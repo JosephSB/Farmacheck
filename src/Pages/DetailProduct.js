@@ -31,10 +31,13 @@ const DetailProduct = ({setDataSearch}) =>{
         helpHttp().post(url,options).then(res => {
             if(res.errorCode === 0){
                 setMessage(res.message)
+
                 if(res.presentaciones !== null ) setData(res.presentaciones)
                 else setMessage(`No se encontro mas informacion del producto ${product}`)
+
                 setLoader(false)
                 setTotalDetalles(res.total)
+                
                 if(res.presentaciones.length === 0)setMessage(`No se encontro mas informacion del producto ${product}`)
             }
         })

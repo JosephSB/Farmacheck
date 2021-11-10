@@ -33,8 +33,8 @@ const PriceProduct = ({dataSearch}) =>{
           });
     }
 
-    const btnMoreProducts = (auxtotal) =>{
-        if(auxtotal < totalProducts) setMoreProducts(true)
+    const btnMoreProducts = (auxtotal, total) =>{
+        if(auxtotal < total) setMoreProducts(true)
         else setMoreProducts(false)
     }
 
@@ -57,14 +57,13 @@ const PriceProduct = ({dataSearch}) =>{
         helpHttp().post(url,options).then(res => {
             if(res.errorCode === 0){
                 setMessage(res.message)
-                if(res.precios !== null) setPrices(prices.concat(res.precios))
+                let aux = prices.concat(res.precios)
+                if(res.precios !== null) setPrices(aux)
                 else setMessage(`No se encontro precios del producto ${product} en ${dataSearch.presentacion} de ${dataSearch.concentracion}`)
 
                 ordenarxPrecio();
-
                 setTotalProducts(res.total)
-
-                btnMoreProducts(prices.length)
+                btnMoreProducts(aux.length,res.total)
 
                 setLoader(false)
             }
@@ -84,7 +83,7 @@ const PriceProduct = ({dataSearch}) =>{
     }
 
     return (
-        <section className={`Banner center column pad-responsive ${totalProducts>10 && "height-none"} p-top`}>
+        <section className={`Banner center column pad-responsive ${prices.length >10 && "height-none"} p-top`}>
             <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
             <div className="center row wrap max-width m-top">
                 <button className="Btn-Back center btn-defaul" onClick={goBack}>

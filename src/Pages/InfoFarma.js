@@ -37,9 +37,9 @@ const InfoFarma = () =>{
                     CIFRAS <strong>DESTACADAS</strong>
                 </p>
                 <div className="max-width center row  wrap space-around">
-                <Skill img={icon} score={2000} descriptio={"descargas de app"} />
-                <Skill img={icon2} score={7000} descriptio={"medicamentos"}/>
-                <Skill img={icon3} score={18000} descriptio={"establecimientos analizados"}/>
+                <Skill img={icon} score={2000} scoremin={0} descriptio={"descargas de app"} />
+                <Skill img={icon2} score={7000} scoremin={5000} descriptio={"medicamentos"}/>
+                <Skill img={icon3} score={18000} scoremin={16000} descriptio={"establecimientos analizados"}/>
                 </div>
             </section>
         </>
