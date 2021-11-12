@@ -16,10 +16,10 @@ const Skill = (props) =>{
                 clearInterval(inter)
                 setScore(props.score)
             }
-        }, 30);
+        }, 50);
     }
     useEffect(() => {
-        AnimateScore()
+        if(score === 0)AnimateScore()
     }, [inView === true]);
 
     return (

@@ -5,7 +5,6 @@ const PresentacionUbicacion = (props) =>{
     /*-----------States-----------------*/
     const [animate, setAnimate] = useState(false);
     const [transition, setTransition] = useState(false);
-    const [select, setSelect] = useState(props.name);
 
     /*-----------Context-----------------*/
     const dataSearch = useContext(DataContext);
@@ -15,11 +14,16 @@ const PresentacionUbicacion = (props) =>{
             dataSearch.departamento = e.target.innerHTML
             dataSearch.provincia = ""
             dataSearch.distrito = ""
+            props.map()
         } 
-        if(props.name === "PROVINCIA") dataSearch.provincia = e.target.innerHTML
+        if(props.name === "PROVINCIA"){
+            dataSearch.provincia = e.target.innerHTML
+            dataSearch.distrito = ""
+            props.map()
+        } 
         if(props.name === "DISTRITO") dataSearch.distrito = e.target.innerHTML
-        setSelect(e.target.innerHTML)
-        if(props.name === "DEPARTAMENTO" || props.name === "PROVINCIA") props.map()
+
+
         HandleQuiz()
     }
 
@@ -37,11 +41,11 @@ const PresentacionUbicacion = (props) =>{
             transition && setTransition(false)
         }
     }, [props.close]);
-    
+
     return(
         <>
             <div className="Option-Product center row space-between padding-lateral" onClick={HandleQuiz}>
-                <p>{select}</p>
+                <p>{dataSearch[props.name.toLowerCase()] === "" ?props.name : dataSearch[props.name.toLowerCase()]}</p>
                 <i className="fas fa-chevron-down fa-2x"></i>
             </div>
             <div className={`Options-Presentacion center column ${!animate &&'none'} ${transition ? 'traslate0' : ''}`}>

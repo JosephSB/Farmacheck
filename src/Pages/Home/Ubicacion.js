@@ -83,7 +83,12 @@ const Ubicacion = () =>{
         dataSearch.distrito !== "" 
         ){
             history.push("/Locales")
-        }else setMessage("Complete todos los campos")
+        }else {
+            setMessage("Complete todos los campos")
+            setTimeout(() => {
+                setMessage("")
+            }, 3000);
+        }
     }    
     const goBack = (e) =>{
         history.goBack()
@@ -132,10 +137,10 @@ const Ubicacion = () =>{
                         data={distritos}
                         message={"Seleccione una Provincia"}
                     />
+                    <p className="gibson size-16 textcenter">{message}</p>
+                    <button className="Button-Ubicacion m-top pointer" onClick={searchLocals}>Aceptar</button>
                 </>
                 }
-                <button className="Button-Ubicacion m-top pointer" onClick={searchLocals}>Aceptar</button>
-                <p className="gibson size-16 textcenter">{message}</p>
             </div>
         </section>
     )

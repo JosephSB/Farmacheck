@@ -11,6 +11,7 @@ import Skill from '../Components/Skill';
 const InfoFarma = () =>{
     const [close, setClose] = useState('none');
 
+    window.document.body.classList.remove('bg-image')
     return(
         <div className="bg-white">
             <section className="Banner-2 center wrap pad-responsive">
