@@ -1,9 +1,9 @@
 import React,{useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
-import LOGOFARMA from '../Assets/LOGOFARMA.png';
-import '../Styles/Home.css';
+import LOGOFARMA from '../../Assets/LOGOFARMA.png';
+import '../../Styles/Home.css';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import Modal from "../Components/Modal";
+import Modal from "../../Components/Modal";
 
 const Home = () =>{
     const [message, setMessage] = useState('');
@@ -52,7 +52,7 @@ const Home = () =>{
     const handleKeyPress = (e) =>{
         if(e.key === 'Enter') search()
     }
-
+    window.document.body.classList.add('bg-image')
     return(
         <>
             {modal && <Modal setModal={setModal} />}

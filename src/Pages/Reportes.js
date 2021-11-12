@@ -6,6 +6,7 @@ import ImgOtherReporte3 from '../Assets/gettyimages-1271045258-170667a 3.png';
 import '../Styles/DatosAbiertos.css'
 
 const Reportes = () =>{
+    window.document.body.classList.remove('bg-image')
     return(
         <div className="Content-Reporte pad-responsive">
             <p className="Info-Text gib-bol"><strong>REPORTE TRIMESTRAL JUNIO SEPTIEMBRE 2021</strong></p>

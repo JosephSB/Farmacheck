@@ -7,7 +7,9 @@ import Icon4 from '../Assets/image 4.png';
 import Icon5 from '../Assets/image 5.png';
 
 const DatosAbiertos = () =>{
+    window.document.body.classList.remove('bg-image')
     return(
+        <div className="max-width bg-white">
         <div className="Content-DatosAbiertos center column pad-responsive">
             <h1 className="Quiz-Subtitle gib-bol">Datos abiertos FarmaCheck</h1>
             <p className="Info-Text padding-lateral">
@@ -79,6 +81,7 @@ const DatosAbiertos = () =>{
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

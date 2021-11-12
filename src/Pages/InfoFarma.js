@@ -12,7 +12,7 @@ const InfoFarma = () =>{
     const [close, setClose] = useState('none');
 
     return(
-        <>
+        <div className="bg-white">
             <section className="Banner-2 center wrap pad-responsive">
                 <div className="Banner-Info">
                     <p className="Banner2-Title m-none">
@@ -42,7 +42,7 @@ const InfoFarma = () =>{
                 <Skill img={icon3} score={18000} scoremin={16000} descriptio={"establecimientos analizados"}/>
                 </div>
             </section>
-        </>
+        </div>
     )
 }
 

@@ -1,9 +1,10 @@
-import React,{useEffect,useState} from 'react';
-import LOGOFARMA from '../Assets/LOGOFARMA.png';
+import React,{useEffect,useState,useContext } from 'react';
+import LOGOFARMA from '../../Assets/LOGOFARMA.png';
 import {useParams} from 'react-router';
 import { NavLink,useHistory } from 'react-router-dom';
-import { helpHttp } from '../Helpers/helpHttp';
-import Loader from '../Components/Loader';
+import { helpHttp } from '../../Helpers/helpHttp';
+import Loader from '../../Components/Loader';
+import DataContext from '../../Context/DataContext';
 
 
 const SearchProduct = () =>{
@@ -12,6 +13,7 @@ const SearchProduct = () =>{
     const [message, setMessage] = useState("");
     const [loader, setLoader] = useState(false);
     const [moreProducts, setMoreProducts] = useState(false);
+    const dataSearch = useContext(DataContext);
     const {product} = useParams();
     let history = useHistory();
 
@@ -50,13 +52,15 @@ const SearchProduct = () =>{
     }, [page]);
 
     const handleClick = (e) =>{
-        history.push(`/Detalle/${e.target.innerHTML}`)
+        dataSearch.producto = e.target.innerHTML
+        history.push("/Detalle")
     }
 
     const clickMorePorducts = (e) =>{
         setPage(page+1)
     }
-
+    
+    window.document.body.classList.add('bg-image')
     return(
         <section className={`Banner center column pad-responsive ${products.length> 12 && "height-none p-top"}`}>
             <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>

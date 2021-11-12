@@ -2,6 +2,12 @@
     --PrimaryCorlor: #2099AA;
     --SecondaryCorlor: #5E6061;
 }
+.bg-image{
+    background-image: url('../Assets/FONDO.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 .App{
     display: flex;
     flex-direction: column;
@@ -102,6 +108,7 @@
 .max-width{
     width: 100%;
 }
+
 .padding-lateral{
     padding: 0 20px;
     box-sizing: border-box;
@@ -114,6 +121,9 @@
 }
 .color-white{
     color: white;
+}
+.bg-white{
+    background-color: white;
 }
 .color-cyan,.ACTIVE{
     color: var(--PrimaryCorlor);
@@ -160,3 +170,6 @@
     }
   }
   
+.traslate0{
+    transform: translateY(0);
+}

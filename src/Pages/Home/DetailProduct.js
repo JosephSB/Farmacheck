@@ -1,19 +1,21 @@
-import React,{useEffect,useState} from 'react';
-import LOGOFARMA from '../Assets/LOGOFARMA.png';
-import {useParams} from 'react-router';
+import React,{useEffect,useState,useContext} from 'react';
 import { NavLink,useHistory } from 'react-router-dom';
-import { helpHttp } from '../Helpers/helpHttp';
-import Loader from '../Components/Loader';
-import PresentacionProducto from '../Components/PresentacionProducto';
+import { helpHttp } from '../../Helpers/helpHttp'
+import LOGOFARMA from '../../Assets/LOGOFARMA.png';
+import Loader from '../../Components/Loader';
+import PresentacionProducto from '../../Components/PresentacionProducto';
+import DataContext from '../../Context/DataContext';
 
-const DetailProduct = ({setDataSearch}) =>{
-    const {product} = useParams();
+const DetailProduct = () =>{
     let history = useHistory();
     const [totaldetalles, setTotalDetalles] = useState();
     const [loader, setLoader] = useState(false);
     const [data, setData] = useState([]);
     const [message, setMessage] = useState("");
     const [close, setClose] = useState('none');
+    
+    const dataSearch = useContext(DataContext);
+    const product = dataSearch.producto;
 
     useEffect(() => {
         setLoader(true)
@@ -46,7 +48,7 @@ const DetailProduct = ({setDataSearch}) =>{
     const goBack = (e) =>{
         history.goBack()
     }
-
+    window.document.body.classList.add('bg-image')
     return(
         <section className={`Banner center column pad-responsive ${totaldetalles>5 && "height-none"} p-top`}>
             <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
@@ -64,7 +66,7 @@ const DetailProduct = ({setDataSearch}) =>{
                    data.map(
                        item => 
                        <PresentacionProducto 
-                        setDataSearch={setDataSearch}
+                        setDataSearch={dataSearch}
                         close={close} 
                         setclose={setClose}
                         key = {item.presentacion+product}

@@ -1,6 +1,17 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import {useHistory} from 'react-router-dom';
+import DataContext from '../Context/DataContext';
 
 const ItemPrice = (props) =>{
+    const dataSearch = useContext(DataContext);
+    let history = useHistory();
+
+    const handleClick = (e) =>{
+        dataSearch.marca = props.marca
+        dataSearch.laboratorio = props.laboratorio
+        history.push("/Ubicacion")
+    }
+
     return (
         <div className="max-width center column relative m-10">
             <div className="Content-Products center row space-between m-top">
@@ -14,7 +25,7 @@ const ItemPrice = (props) =>{
                         <strong className="size-26 color-cyan">{props.precio.toFixed(2)}</strong>
                     </p>
                 </div>
-                <span className="Item-Locate center">
+                <span className="Item-Locate center" onClick={handleClick}>
                     <i className="fas fa-map-marker-alt"></i>
                 </span>  
             </div>

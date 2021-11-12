@@ -7,11 +7,9 @@ const PresentacionProducto = (props) =>{
     let history = useHistory();
 
     const handleClick = (e) =>{
-        props.setDataSearch({
-            presentacion: props.presentacion,
-            concentracion: e.target.innerHTML
-        })
-        history.push(`/Precios/${props.product}`)
+        props.setDataSearch.presentacion = props.presentacion
+        props.setDataSearch. concentracion = e.target.innerHTML
+        history.push("/Precios")
     }
     const HandleQuiz = (e) =>{
         props.setclose(props.presentacion)
