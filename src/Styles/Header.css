@@ -25,6 +25,7 @@
     font-family: canada-type-gibson;
     color: var(--SecondaryCorlor);
     font-size: 14px;
+    text-align: center;
     padding: 0 5px;
     box-sizing: border-box;
 }
