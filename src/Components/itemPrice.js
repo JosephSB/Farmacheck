@@ -13,30 +13,22 @@ const ItemPrice = (props) =>{
     }
 
     return (
-        <div className="max-width center column relative m-10">
-            <div className="Content-Products center row space-between m-top">
-                <div className=" Box-ProductDetail center wrap space-between">
-                    <div className="Datos-Product column">
-                        <p className="Text-ProductName size-26 gib-bol m-none"><strong>{props.marca}</strong></p>
-                        <p className="gibson m-none">{props.laboratorio}</p>
-                    </div>
-                    <p className="gibson m-none">
-                        <strong className="size-26 ">s/</strong>
-                        <strong className="size-26 color-cyan">{props.precio.toFixed(2)}</strong>
-                    </p>
+        <div className="Banner__ProductsResult center row">
+            <div className="Banner__Box-ProductDetail">
+                <div className="Banner__Datos-Product">
+                    <p className="Banner__Title4--wrap" title={props.marca}><strong>{props.marca}</strong></p>
+                    <p className="Banner__Text4--sm">{props.laboratorio}</p>
                 </div>
-                <span className="Item-Locate center" onClick={handleClick}>
-                    <i className="fas fa-map-marker-alt"></i>
-                </span>  
+                <p className="Banner__Price">
+                    <strong className="Banner__Title6">s/</strong>
+                    <strong className="Banner__Title4--cyan">{props.precio.toFixed(2)}</strong>
+                </p>
             </div>
-            
+            <span className="Banner__Item-Ubicacion center" onClick={handleClick}>
+                <i className="fas fa-map-marker-alt"></i>
+            </span>  
         </div>
     )
 }
 
 export default ItemPrice
-
-/*
-            <div className="Content-Products center btn-verLugares">
-                Ver lugares de compra
-            </div>*/

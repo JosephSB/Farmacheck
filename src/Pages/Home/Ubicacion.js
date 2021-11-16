@@ -1,10 +1,11 @@
 import React,{useEffect,useState,useContext} from 'react';
-import { NavLink,useHistory } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
 import { helpHttp } from '../../Helpers/helpHttp'
 import LOGOFARMA from '../../Assets/LOGOFARMA.png';
 import Loader from '../../Components/Loader';
 import DataContext from '../../Context/DataContext';
 import PresentacionUbicacion from '../../Components/PresentacionUbicacion';
+import LinksSearch from '../../Components/LinksSearch';
 
 
 const Ubicacion = () =>{
@@ -34,6 +35,7 @@ const Ubicacion = () =>{
             "presentacion": dataSearch.presentacion,
             "concentracion":dataSearch.concentracion
         }
+        if(dataSearch.laboratorio === "") window.location.href ="/Inicio"
         let options = {
             body: form,
             headers: {"content-type": "application/json"}
@@ -90,26 +92,16 @@ const Ubicacion = () =>{
             }, 3000);
         }
     }    
-    const goBack = (e) =>{
-        history.goBack()
-    }
 
     window.document.body.classList.add('bg-image')
     return(
-        <section className="Banner center column pad-responsive p-top">
-            <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
-            <div className="center row wrap max-width m-top">
-                <button className="Btn-Back center btn-defaul" onClick={goBack}>
-                    Regresar
-                </button>
-                <NavLink className="Btn-Back center" exact to="/Inicio">
-                    Realizar otra busqueda
-                </NavLink>
-            </div>
-            <p className="gibson size-16 textcenter">
+        <section className="Banner center column">
+            <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
+            <LinksSearch/>
+            <p className="Banner__Text4">
                 Para mayor precisión sobre los lugares de compra, por favor completa la siguiente información:
             </p>
-            <div className="Content-Products center column">
+            <div className="Banner__Contenido center column">
                 {loader ?
                  <Loader message={"Buscando Ubicaciones..."} />
                  :
@@ -137,8 +129,8 @@ const Ubicacion = () =>{
                         data={distritos}
                         message={"Seleccione una Provincia"}
                     />
-                    <p className="gibson size-16 textcenter">{message}</p>
-                    <button className="Button-Ubicacion m-top pointer" onClick={searchLocals}>Aceptar</button>
+                    <p className="Banner__Text4--option">{message}</p>
+                    <button className="Banner__Button-Ubicacion" onClick={searchLocals}>Aceptar</button>
                 </>
                 }
             </div>

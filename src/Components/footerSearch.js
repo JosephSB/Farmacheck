@@ -9,9 +9,9 @@ const FooterSearch = () =>{
         <div className="max-width center column">
             <p className="color-grey m-none size-16 gibson">
                 <i className="fas fa-info-circle color-cyan"></i>
-                Envíanos tus comentarios a
-                </p>
-            <p onClick={handleExternalLink} className="color-cyan m-none size-16 gibson">info@FarmaCheck.pe</p>
+                &nbsp;Envíanos tus comentarios a
+            </p>
+            <p onClick={handleExternalLink} className="color-cyan m-none size-16 gibson pointer">info@FarmaCheck.pe</p>
         </div>
     )
 }

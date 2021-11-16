@@ -1,7 +1,4 @@
-:root{
-    --PrimaryCorlor: #2099AA;
-    --SecondaryCorlor: #5E6061;
-}
+
 .bg-image{
     background-image: url('../Assets/FONDO.png');
     background-repeat: no-repeat;
@@ -121,6 +118,9 @@
 }
 .color-white{
     color: white;
+}
+.color-black{
+    color: black;
 }
 .bg-white{
     background-color: white;

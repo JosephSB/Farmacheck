@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoApeps from '../Assets/LOGO APEPS.png';
 import LogoAPESEG from '../Assets/LOGO APESEG.png';
+import	'../Styles/Header.css';
 
 const Header = () =>{
     const [iconResp, setIconResp] = useState(true);

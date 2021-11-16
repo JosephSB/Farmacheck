@@ -1,7 +1,7 @@
 import React from 'react';
-import '../Styles/Footer.css';
 import PlayStore from '../Assets/klipartz 3.png';
 import AppStore from '../Assets/klipartz 4.png';
+import '../Styles/Footer.css';
 
 const Footer = () =>{
     return(

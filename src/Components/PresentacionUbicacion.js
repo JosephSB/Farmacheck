@@ -44,11 +44,13 @@ const PresentacionUbicacion = (props) =>{
 
     return(
         <>
-            <div className="Option-Product center row space-between padding-lateral" onClick={HandleQuiz}>
-                <p>{dataSearch[props.name.toLowerCase()] === "" ?props.name : dataSearch[props.name.toLowerCase()]}</p>
+            <div className="Banner__Option-Presentacion" onClick={HandleQuiz}>
+                <p className="color-white">
+                    {dataSearch[props.name.toLowerCase()] === "" ?props.name : dataSearch[props.name.toLowerCase()]}
+                </p>
                 <i className="fas fa-chevron-down fa-2x"></i>
             </div>
-            <div className={`Options-Presentacion center column ${!animate &&'none'} ${transition ? 'traslate0' : ''}`}>
+            <div className={`Banner__Contenedor-Presentacion ${!animate &&'none'} ${transition ? 'traslate0' : ''}`}>
             {
                 props.data.length>0 
                 ?
@@ -56,14 +58,14 @@ const PresentacionUbicacion = (props) =>{
                     data =>
                     <p 
                     onClick={handleClick}
-                    className="size-16 gibson m-10 pointer" 
+                    className="Banner__Text4--option" 
                     key={data+props.name}
                     >
                         {data}
                     </p> 
                 )
                 :
-                <p className="gibson size-16 textcenter">{props.message}</p>
+                <p className="Banner__Text4--option">{props.message}</p>
             }
             </div>
         </>

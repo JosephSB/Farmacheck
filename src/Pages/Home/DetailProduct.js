@@ -1,14 +1,12 @@
 import React,{useEffect,useState,useContext} from 'react';
-import { NavLink,useHistory } from 'react-router-dom';
 import { helpHttp } from '../../Helpers/helpHttp'
 import LOGOFARMA from '../../Assets/LOGOFARMA.png';
 import Loader from '../../Components/Loader';
 import PresentacionProducto from '../../Components/PresentacionProducto';
 import DataContext from '../../Context/DataContext';
+import LinksSearch from '../../Components/LinksSearch';
 
 const DetailProduct = () =>{
-    let history = useHistory();
-    const [totaldetalles, setTotalDetalles] = useState();
     const [loader, setLoader] = useState(false);
     const [data, setData] = useState([]);
     const [message, setMessage] = useState("");
@@ -25,6 +23,7 @@ const DetailProduct = () =>{
             "maxResults": 10,
             "producto": product
         }
+        if(product === "") window.location.href ="/Inicio"
         let options = {
             body: form,
             headers: {"content-type": "application/json"}
@@ -38,29 +37,18 @@ const DetailProduct = () =>{
                 else setMessage(`No se encontro mas informacion del producto ${product}`)
 
                 setLoader(false)
-                setTotalDetalles(res.total)
                 
                 if(res.presentaciones.length === 0)setMessage(`No se encontro mas informacion del producto ${product}`)
             }
         })
     }, []);
 
-    const goBack = (e) =>{
-        history.goBack()
-    }
     window.document.body.classList.add('bg-image')
     return(
-        <section className={`Banner center column pad-responsive ${totaldetalles>5 && "height-none"} p-top`}>
-            <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
-            <div className="center row wrap max-width m-top">
-                <button className="Btn-Back center btn-defaul" onClick={goBack}>
-                    Regresar
-                </button>
-                <NavLink className="Btn-Back center" exact to="/Inicio">
-                    Realizar otra busqueda
-                </NavLink>
-            </div>
-            <div className="Content-Products center column">
+        <section className="Banner center column">
+            <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
+            <LinksSearch/>
+            <div className="Banner__Contenido center column">
                 {loader && <Loader message={"Buscando Productos..."} />}
                 {
                    data.map(
@@ -75,7 +63,7 @@ const DetailProduct = () =>{
                         product={product}
                        />) 
                 }
-                <p className="gibson size-16 textcenter">{message}</p>
+                <p className="Banner__Text4">{message}</p>
             </div>
         </section>
     )

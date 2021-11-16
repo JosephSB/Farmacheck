@@ -28,16 +28,16 @@ const PresentacionProducto = (props) =>{
 
     return(
         <>
-            <div className="Option-Product center row space-between padding-lateral" onClick={HandleQuiz}>
-                <p>{props.presentacion}</p>
+            <div className="Banner__Option-Presentacion" onClick={HandleQuiz}>
+                <p className="color-white">{props.presentacion}</p>
                 <i className="fas fa-chevron-down fa-2x"></i>
             </div>
-            <div className={`Options-Presentacion center column ${!animate &&'none'} ${transition ? 'traslate0' : ''}`}>
+            <div className={`Banner__Contenedor-Presentacion ${!animate &&'none'} ${transition ? 'traslate0' : ''}`}>
                 {props.concentraciones.map(
                     data =>
                     <p 
                     onClick={handleClick}
-                    className="size-16 gibson m-10 pointer" 
+                    className="Banner__Text4--option" 
                     key={data.concentracion+props.presentacion}>
                         {data.concentracion}
                     </p> 

@@ -32,7 +32,7 @@ const DatosAbiertos = () =>{
                     <div className="Box-Info center row start">
                         <img src={Icon1} alt="Search"/>
                         <div className="padding-lateral">
-                            <p className="Info-Text gib-bol color-cyan m-none">Fuente</p>
+                            <p className="Info-Text color-cyan m-none"><strong>Fuente</strong></p>
                             <p className="Info-Text m-none">
                                 Se recoge data del Observatorio de la Dirección General de Medicamentos (Digemid), 
                                 de las Instituciones Prestadoras de Servicios de Salud (IPRESS) y de la 
@@ -43,7 +43,7 @@ const DatosAbiertos = () =>{
                     <div className="Box-Info center row start">
                         <img src={Icon2} alt="Search"/>
                         <div className="padding-lateral">
-                            <p className="Info-Text gib-bol color-cyan m-none">Número de medicamentos</p>
+                            <p className="Info-Text color-cyan m-none"><strong>Número de medicamentos</strong></p>
                             <p className="Info-Text m-none">
                                 La data que tenemos incluye los precios de 7,000 medicamentos, que son los más 
                                 utilizados en las principales IPRESS del país. 
@@ -55,7 +55,7 @@ const DatosAbiertos = () =>{
                     <div className="Box-Info center row start">
                         <img src={Icon3} alt="Search"/>
                         <div className="padding-lateral">
-                            <p className="Info-Text gib-bol color-cyan m-none">Periodo de análisis</p>
+                            <p className="Info-Text color-cyan m-none"><strong>Periodo de análisis</strong></p>
                             <p className="Info-Text m-none">
                                 La información ofrecida reúne datos desde los tres últimos años. 
                             </p>
@@ -64,7 +64,7 @@ const DatosAbiertos = () =>{
                     <div className="Box-Info center row start">
                         <img src={Icon4} alt="Search"/>
                         <div className="padding-lateral">
-                            <p className="Info-Text gib-bol color-cyan m-none">Orden</p>
+                            <p className="Info-Text color-cyan m-none"><strong>Orden</strong></p>
                             <p className="Info-Text m-none">
                                 La data está organizada por orden alfabético.
                             </p>
@@ -73,7 +73,7 @@ const DatosAbiertos = () =>{
                     <div className="Box-Info center row start">
                         <img src={Icon5} alt="Search"/>
                         <div className="padding-lateral">
-                            <p className="Info-Text gib-bol color-cyan m-none">Actualización</p>
+                            <p className="Info-Text color-cyan m-none"><strong>Actualización</strong></p>
                             <p className="Info-Text m-none">
                                 La data será actualizada los últimos días de cada mes.
                             </p>

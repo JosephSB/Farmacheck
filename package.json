@@ -1,7 +1,7 @@
 {
   "name": "farmacheck",
   "version": "0.1.0",
-  "homepage": "http://farmacheck.preciso.pe",
+  "homepage": "http://farmacheck.preciso.pe/vprueba",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",

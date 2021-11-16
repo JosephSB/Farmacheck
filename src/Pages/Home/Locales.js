@@ -1,11 +1,11 @@
 import React,{useEffect,useState,useContext} from 'react';
-import { NavLink,useHistory} from 'react-router-dom';
 import { helpHttp } from '../../Helpers/helpHttp';
 import LOGOFARMA from '../../Assets/LOGOFARMA.png';
 import Loader from '../../Components/Loader';
 import FooterSearch from '../../Components/footerSearch';
 import DataContext from '../../Context/DataContext';
 import ItemUbicacion from '../../Components/itemUbicacion';
+import LinksSearch from '../../Components/LinksSearch';
 
 const Locales = () =>{
     /*-----------STATES-----------------*/
@@ -15,8 +15,6 @@ const Locales = () =>{
     const [locations, setLocations] = useState([]);
     const [totalProducts, setTotalProducts] = useState();
     const [moreProducts, setMoreProducts] = useState(false);
-    /*-----------hooks-----------------*/
-    let history = useHistory();
 
     /*-----------Context-----------------*/
     const dataSearch = useContext(DataContext);
@@ -35,7 +33,7 @@ const Locales = () =>{
             "provincia":dataSearch.provincia,
             "distrito": dataSearch.distrito
         }
-
+        if(dataSearch.laboratorio === "") window.location.href ="/Inicio"
         let options = {
             body: form,
             headers: {"content-type": "application/json"}
@@ -74,35 +72,26 @@ const Locales = () =>{
         if(auxtotal < total) setMoreProducts(true)
         else setMoreProducts(false)
     }
-    const goBack = (e) =>{
-        history.goBack()
-    }
+
     const clickMorePorducts = (e) =>{
         setPage(page+1)
     }
 
     window.document.body.classList.add('bg-image')
     return(
-        <section className="Banner center column pad-responsive">
-            <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
-            <div className="center row wrap max-width m-top">
-                <button className="Btn-Back center btn-defaul" onClick={goBack}>
-                    Regresar
-                </button>
-                <NavLink className="Btn-Back center" exact to="/Inicio">
-                    Realizar otra busqueda
-                </NavLink>
-            </div>
-            <div className="Content-Products center column">
+        <section className="Banner center column">
+            <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
+            <LinksSearch/>
+            <div className="Banner__Contenido center column">
                 {loader 
                     ? 
                     <Loader message={"Buscando Precios..."}/>
                     :
                     <>
                         {
-                        <div className="max-width center column start-y">
-                            <p className="color-grey m-none size-16 gibson">Total de Resultados: {totalProducts}</p>
-                            <p className="color-grey m-none size-16 gibson">Resultados en <strong>{dataSearch.distrito}</strong></p>
+                        <div className="Banner__InfoSearch">
+                            <p className="Banner__Text4--sm">Total de Resultados: {totalProducts}</p>
+                            <p className="Banner__Text4--sm">Resultados en <strong>{dataSearch.distrito}</strong></p>
                         </div>
                         }
                     </>
@@ -120,9 +109,9 @@ const Locales = () =>{
                 }
                 {
                 moreProducts && 
-                <div onClick={clickMorePorducts} className="Option-Product center bg-cyan" >VER MAS</div>
+                <div onClick={clickMorePorducts} className="Banner__Option-More-Product center" >VER MAS</div>
                 }
-                <p className="gibson size-16 textcenter">{message}</p>
+                <p className="Banner__Text4--option">{message}</p>
                 <FooterSearch/>
             </div>
         </section>

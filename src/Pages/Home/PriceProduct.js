@@ -1,11 +1,11 @@
 import React,{useEffect,useState,useContext} from 'react';
-import { NavLink,useHistory} from 'react-router-dom';
 import { helpHttp } from '../../Helpers/helpHttp';
 import LOGOFARMA from '../../Assets/LOGOFARMA.png';
 import Loader from '../../Components/Loader';
 import ItemPrice from '../../Components/itemPrice';
 import DataContext from '../../Context/DataContext';
 import FooterSearch from '../../Components/footerSearch';
+import LinksSearch from '../../Components/LinksSearch';
 
 
 const PriceProduct = () =>{
@@ -17,12 +17,8 @@ const PriceProduct = () =>{
     const [loader, setLoader] = useState(false);
     const [moreProducts, setMoreProducts] = useState(false);
 
-    /*-----------hooks-----------------*/
-    let history = useHistory();
-
     /*-----------Context-----------------*/
-    const dataSearch = useContext(DataContext);
-    const product = dataSearch.producto;
+    const {producto,presentacion,concentracion}= useContext(DataContext);
 
 
     const ordenarxPrecio = () =>{
@@ -48,11 +44,11 @@ const PriceProduct = () =>{
             "keyCode": process.env.REACT_APP_API_KEY_SERVICE,
             "firstResult": page,
             "maxResults": 4,
-            "producto": product,
-            "presentacion" : dataSearch.presentacion,
-            "concentracion":dataSearch.concentracion
+            "producto": producto,
+            "presentacion" :presentacion,
+            "concentracion":concentracion
         }
-
+        if(producto === "") window.location.href ="/Inicio"
         let options = {
             body: form,
             headers: {"content-type": "application/json"}
@@ -63,7 +59,7 @@ const PriceProduct = () =>{
                 setMessage(res.message)
                 let aux = prices.concat(res.precios)
                 if(res.precios !== null) setPrices(aux)
-                else setMessage(`No se encontro precios del producto ${product} en ${dataSearch.presentacion} de ${dataSearch.concentracion}`)
+                else setMessage(`No se encontro precios del producto ${producto} en ${presentacion} de ${concentracion}`)
 
                 ordenarxPrecio();
                 setTotalProducts(res.total)
@@ -75,35 +71,25 @@ const PriceProduct = () =>{
 
     }, [page]);
 
-    const goBack = (e) =>{
-        history.goBack()
-    }
     const clickMorePorducts = (e) =>{
         setPage(page+1)
     }
     
     window.document.body.classList.add('bg-image')
     return (
-        <section className={`Banner center column pad-responsive ${prices.length >10 && "height-none"} p-top`}>
-            <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
-            <div className="center row wrap max-width m-top">
-                <button className="Btn-Back center btn-defaul" onClick={goBack}>
-                    Regresar
-                </button>
-                <NavLink className="Btn-Back center" exact to="/Inicio">
-                    Realizar otra busqueda
-                </NavLink>
-            </div>
-            <div className="Content-Products center column">
+        <section className="Banner center column">
+            <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
+            <LinksSearch/>
+            <div className="Banner__Contenido center column">
                 {loader 
                     ? 
                     <Loader message={"Buscando Precios..."}/>
                     :
                     <>
                         {
-                        <div className="max-width center column start-y">
-                            <p className="color-grey m-none size-16 gibson">Total de Resultados: {totalProducts}</p>
-                            <p className="color-grey m-none size-16 gibson">*Precios promedio referenciales</p>
+                        <div className="Banner__InfoSearch">
+                            <p className="Banner__Text4--sm">Total de Resultados: {totalProducts}</p>
+                            <p className="Banner__Text4--sm">*Precios promedio referenciales</p>
                         </div>
                         }
                     </>
@@ -121,9 +107,9 @@ const PriceProduct = () =>{
                 }
                 {
                 moreProducts && 
-                <div onClick={clickMorePorducts} className="Option-Product center bg-cyan" >VER MAS</div>
+                <div onClick={clickMorePorducts} className="Banner__Option-More-Product center">VER MAS</div>
                 }
-                <p className="gibson size-16 textcenter">{message}</p>
+                <p className="Banner__Text4--option">{message}</p>
                 <FooterSearch/>
             </div>
         </section>

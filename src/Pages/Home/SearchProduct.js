@@ -1,10 +1,11 @@
 import React,{useEffect,useState,useContext } from 'react';
 import LOGOFARMA from '../../Assets/LOGOFARMA.png';
 import {useParams} from 'react-router';
-import { NavLink,useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { helpHttp } from '../../Helpers/helpHttp';
 import Loader from '../../Components/Loader';
 import DataContext from '../../Context/DataContext';
+import LinksSearch from '../../Components/LinksSearch';
 
 
 const SearchProduct = () =>{
@@ -62,17 +63,10 @@ const SearchProduct = () =>{
     
     window.document.body.classList.add('bg-image')
     return(
-        <section className={`Banner center column pad-responsive ${products.length> 12 && "height-none p-top"}`}>
-            <img className="Banner-Img" src={LOGOFARMA} alt="FARMACHECK"/>
-            <div className="center row wrap max-width m-top">
-                <NavLink className="Btn-Back center" exact to="/Inicio" activeClassName="ACTIVE">
-                    Regresar
-                </NavLink>
-                <NavLink className="Btn-Back center" exact to="/Inicio" activeClassName="ACTIVE">
-                    Realizar otra busqueda
-                </NavLink>
-            </div>
-            <div className="Content-Products center column">
+        <section className="Banner center column">
+            <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
+            <LinksSearch/>
+            <div className="Banner__Contenido center column">
                 {loader && <Loader message={"Buscando Productos..."} />}
                 {
                 products.length > 0 
@@ -84,7 +78,7 @@ const SearchProduct = () =>{
                                     <div 
                                     onClick={handleClick} 
                                     key={product.producto}
-                                    className="Option-Product center">
+                                    className="Banner__Option-Product center">
                                         {product.producto}
                                     </div>
                                     )
@@ -93,7 +87,7 @@ const SearchProduct = () =>{
                     :
                         <p>{message}</p>
                 }
-                {moreProducts && <div onClick={clickMorePorducts} className="Option-Product center bg-cyan" >VER MAS</div>}
+                {moreProducts && <div onClick={clickMorePorducts} className="Banner__Option-More-Product center" >VER MAS</div>}
             </div>
         </section>
     )

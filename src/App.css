@@ -1,1 +1,292 @@
+.Banner, .Banner__Contenido{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
 
+.Banner__Text4, .Banner__Title5{
+    margin: 30px 0;
+}
+
+/*--------------------MODAL------------*/
+
+.Content-Modal{
+    position: fixed;
+    z-index: 20;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(36, 36, 36, 0.555);
+}
+.Modal{
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    padding: 50px;
+    position: relative;
+}
+.Modal-parraf{
+    color: var(--SecondaryCorlor);
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 14px;
+    margin: 15px 0;
+}
+.cros-modal{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    cursor: pointer;
+}
+
+/*-------------HOME-------------*/
+.Banner{
+    padding: 30px 10px;
+    padding-top: 110px;
+    min-height: 700px;
+    margin: auto;
+}
+.Banner__Logo{
+    width: 100%;
+    max-width: 353px;
+}
+.Banner__Contenido,.Banner__Buscador{
+    max-width: 540px;
+}
+.Banner__Text4,.Banner__Text4--option{
+    font-size: 16px;
+}
+.Banner__Text6{
+    font-size: 12px;
+}
+.Banner__Title6{
+    margin: 0;
+    font-size: 18px;
+}
+.Banner__Title5{
+    font-size: 20px;
+}
+.Banner__Title4,.Banner__Title4--cyan,.Banner__Title4--wrap{
+    margin: 0;
+    font-size: 24px;
+}
+.Banner__Title4--cyan{
+    color: var(--PrimaryCorlor);
+}
+.Banner__Title5--Cyan{
+    color: var(--PrimaryCorlor);
+}
+.Banner__Buscador{
+    width: 100%;
+    height: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.Banner__Buscador-Input{
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    padding-right: 60px;
+    border-radius: 5px;
+    color: var(--SecondaryCorlor);
+    font-size: 20px;
+}
+.Banner__Buscador-Tools{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    position: absolute;
+    padding: 10px;
+    right: 0;
+    color: var(--PrimaryCorlor);
+}
+/*--BUSCADOR--*/
+.Banner__Links{
+    width: 100%;
+    margin: 20px 0;
+}
+.Banner__Btn-Back{
+    width: 100%;
+    max-width: 260px;
+    height: 41px;
+    border-radius: 5px;
+    background-color: white;
+    color: var(--PrimaryCorlor);
+    font-size: 20px;
+    font-family:canada-type-gibson, sans-serif;
+    margin: 10px;
+    box-shadow: -4px 5px 15px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -4px 5px 15px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px 5px 15px -8px rgba(0,0,0,0.75);
+}
+.Banner__Option-Product,.Banner__Option-More-Product,
+.Banner__Option-Presentacion{
+    width: 100%;
+    min-height: 40px;
+    margin:0 4px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: var(--SecondaryCorlor);
+    color: white;
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .5s;
+    z-index: 2;
+}
+.Banner__Option-More-Product{
+    background-color: var(--PrimaryCorlor);
+}
+.Banner__Option-Presentacion{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.Banner__Option-Presentacion:hover{
+    background-color: rgb(133, 133, 133);
+}
+.Banner__Contenedor-Presentacion{
+    width: 100%;
+    background-color: #E6E4E5;
+    min-height: 50px;
+    border-radius: 5px;
+    transition: all .5s;
+    overflow:hidden;
+    transform: translateY(-20%);
+}
+.Banner__Text4--option{
+    margin: 10px 0;
+    cursor: pointer;
+}
+.Banner__InfoSearch{
+    width: 100%;
+    color: var(--SecondaryCorlor);
+    text-align: start;
+}
+.Banner__Text4--sm{
+    margin: 0;
+}
+/*-------
+.Banner__InfoProduct{
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    margin: 5px 0;
+    color: black;
+}
+.Banner__TextInfoProduct{
+    max-width: 200px;
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: black;
+}
+*/
+.Banner__ProductsResult{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.Banner__Box-ProductDetail{
+    width: 100%;
+    max-width: calc(100%-40px);
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    text-align: start;
+}
+.Banner__Datos-Product,.Banner__Datos-Ubicacion{
+    width: 100%;
+    max-width: 76%;
+    text-align: start;
+}
+.Banner__Title4--wrap{
+    /*white-space: nowrap;*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.Banner__Price,.Banner__Price--sn{
+    width: 100%;
+    max-width: 100px;
+    min-width: 20%;
+    text-align: end;
+}
+
+@media screen and (max-width:450px){
+    .Banner__Box-ProductDetail{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .Banner__Price{
+        text-align: start;
+        margin: 0;
+    }
+    .Banner__Price--sn{
+        text-align: end;
+        margin: 0;
+    }
+}
+@media screen and (max-width:350px){
+    .Banner__Datos-Ubicacion{
+        max-width: 100%;
+        text-align: center;
+    }
+    .Banner__ProductsResult{
+        flex-direction: column;
+        align-items: center;
+    }
+    .Banner__Price--sn{
+        text-align: center;
+    }
+}
+
+.Banner__Item-Ubicacion{
+    padding: 10px;
+    background-color: var(--PrimaryCorlor);
+    border-radius: 30px;
+    width: 35px;
+    height: 35px;
+    color: white;
+    cursor: pointer;
+}
+.Banner__Button-Ubicacion{
+    width: 170px;
+    height: 42px;
+    border-radius: 5px;
+    background-color: var(--PrimaryCorlor);
+    color: white;
+    font-size: 20px;
+    transition: background-color .5s;
+}
+.Banner__Button-Ubicacion:hover{
+    background-color: #25aec0;
+}
+/*------------------------------*/
+
+.Span-Eror404{
+    font-size: 50px;
+    margin: 20px 0;
+    position: relative;
+    color: var(--SecondaryCorlor);
+}
+.Span-Eror404::before{
+    content: "404";
+    position: absolute;
+    font-size: 40px;
+    top: -30px;
+    bottom: 0;
+    color: var(--PrimaryCorlor);
+}
