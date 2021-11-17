@@ -17,7 +17,7 @@ import Error404 from '../Pages/Error404';
 const MainRouter = () =>{
     return(
         <DataProvider>
-            <Router basename="/vprueba">
+            <Router>
                 <Header/>
                 <Switch>
                     <Route exact path="/" component={Home}></Route>
