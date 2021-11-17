@@ -1,35 +1,33 @@
 import React from 'react';
-import '../Styles/DatosAbiertos.css'
-import Icon1 from '../Assets/image 1.png';
-import Icon2 from '../Assets/image 2.png';
-import Icon3 from '../Assets/image 3.png';
-import Icon4 from '../Assets/image 4.png';
-import Icon5 from '../Assets/image 5.png';
+import Icon1 from '../Assets/Img/image 1.png';
+import Icon2 from '../Assets/Img/image 2.png';
+import Icon3 from '../Assets/Img/image 3.png';
+import Icon4 from '../Assets/Img/image 4.png';
+import Icon5 from '../Assets/Img/image 5.png';
 
 const DatosAbiertos = () =>{
     window.document.body.classList.remove('bg-image')
     return(
-        <div className="max-width bg-white">
-        <div className="Content-DatosAbiertos center column pad-responsive">
-            <h1 className="Quiz-Subtitle gib-bol">Datos abiertos FarmaCheck</h1>
+        <div className="Content-DatosAbiertos">
+            <h1 className="Quiz-Subtitle">Datos abiertos FarmaCheck</h1>
             <p className="Info-Text padding-lateral">
                 ¿Quieres acceder a la data de precios promedio de medicamentos en el Perú? En esta sección 
                 podrás descargar la información trabajada por Apeseg y Apeps de manera gratuita.
             </p>
-            <div className="Content-dowload center wrap space-evenly">
-                <div className="Download center column space-evenly">
-                    <p className="Download-Text gibson">Descarga de datos acumulados</p>
+            <div className="Content-dowload">
+                <div className="Download">
+                    <p className="Download-Text">Descarga de datos acumulados</p>
                     <button className="Btn-Download">Descargar la información en CSV</button>
                 </div>
-                <div className="Download center column space-evenly">
-                    <p className="Download-Text gibson">Descarga de datos trimestrales</p>
+                <div className="Download">
+                    <p className="Download-Text">Descarga de datos trimestrales</p>
                     <button className="Btn-Download">Descargar la información en CSV</button>
                 </div>
             </div>
-            <h2 className="Quiz-Subtitle gib-bol">Nota metodológica</h2>
-            <div className="Content-NotaMetodo center wrap space-evenly">
-                <div className="Box center column">
-                    <div className="Box-Info center row start">
+            <h2 className="Quiz-Subtitle">Nota metodológica</h2>
+            <div className="Content-NotaMetodo">
+                <div className="Box">
+                    <div className="Box-Info">
                         <img src={Icon1} alt="Search"/>
                         <div className="padding-lateral">
                             <p className="Info-Text color-cyan m-none"><strong>Fuente</strong></p>
@@ -40,7 +38,7 @@ const DatosAbiertos = () =>{
                             </p>
                         </div>
                     </div>
-                    <div className="Box-Info center row start">
+                    <div className="Box-Info">
                         <img src={Icon2} alt="Search"/>
                         <div className="padding-lateral">
                             <p className="Info-Text color-cyan m-none"><strong>Número de medicamentos</strong></p>
@@ -51,8 +49,8 @@ const DatosAbiertos = () =>{
                         </div>
                     </div>
                 </div>
-                <div className="Box center column">
-                    <div className="Box-Info center row start">
+                <div className="Box">
+                    <div className="Box-Info">
                         <img src={Icon3} alt="Search"/>
                         <div className="padding-lateral">
                             <p className="Info-Text color-cyan m-none"><strong>Periodo de análisis</strong></p>
@@ -61,7 +59,7 @@ const DatosAbiertos = () =>{
                             </p>
                         </div>
                     </div>
-                    <div className="Box-Info center row start">
+                    <div className="Box-Info">
                         <img src={Icon4} alt="Search"/>
                         <div className="padding-lateral">
                             <p className="Info-Text color-cyan m-none"><strong>Orden</strong></p>
@@ -70,7 +68,7 @@ const DatosAbiertos = () =>{
                             </p>
                         </div>
                     </div>
-                    <div className="Box-Info center row start">
+                    <div className="Box-Info">
                         <img src={Icon5} alt="Search"/>
                         <div className="padding-lateral">
                             <p className="Info-Text color-cyan m-none"><strong>Actualización</strong></p>
@@ -81,7 +79,6 @@ const DatosAbiertos = () =>{
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     )
 }

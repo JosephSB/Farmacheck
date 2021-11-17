@@ -1,5 +1,5 @@
 import React,{useEffect,useState,useContext } from 'react';
-import LOGOFARMA from '../../Assets/LOGOFARMA.png';
+import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
 import {useParams} from 'react-router';
 import { useHistory } from 'react-router-dom';
 import { helpHttp } from '../../Helpers/helpHttp';

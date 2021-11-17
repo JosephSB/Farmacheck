@@ -14,7 +14,6 @@ import Locales from '../Pages/Home/Locales';
 import { DataProvider } from '../Context/DataContext';
 import Error404 from '../Pages/Error404';
 
-
 const MainRouter = () =>{
     return(
         <DataProvider>

@@ -1,6 +1,7 @@
 import React,{useEffect,useState,useContext} from 'react';
+import { useHistory } from "react-router-dom";
 import { helpHttp } from '../../Helpers/helpHttp'
-import LOGOFARMA from '../../Assets/LOGOFARMA.png';
+import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
 import Loader from '../../Components/Loader';
 import PresentacionProducto from '../../Components/PresentacionProducto';
 import DataContext from '../../Context/DataContext';
@@ -11,6 +12,8 @@ const DetailProduct = () =>{
     const [data, setData] = useState([]);
     const [message, setMessage] = useState("");
     const [close, setClose] = useState('none');
+
+    let history = useHistory();
     
     const dataSearch = useContext(DataContext);
     const product = dataSearch.producto;
@@ -23,7 +26,7 @@ const DetailProduct = () =>{
             "maxResults": 10,
             "producto": product
         }
-        if(product === "") window.location.href ="/Inicio"
+        if(product === "") history.push("/Inicio")
         let options = {
             body: form,
             headers: {"content-type": "application/json"}

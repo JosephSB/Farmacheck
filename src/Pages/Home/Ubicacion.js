@@ -1,7 +1,7 @@
 import React,{useEffect,useState,useContext} from 'react';
 import {useHistory } from 'react-router-dom';
 import { helpHttp } from '../../Helpers/helpHttp'
-import LOGOFARMA from '../../Assets/LOGOFARMA.png';
+import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
 import Loader from '../../Components/Loader';
 import DataContext from '../../Context/DataContext';
 import PresentacionUbicacion from '../../Components/PresentacionUbicacion';
@@ -35,7 +35,7 @@ const Ubicacion = () =>{
             "presentacion": dataSearch.presentacion,
             "concentracion":dataSearch.concentracion
         }
-        if(dataSearch.laboratorio === "") window.location.href ="/Inicio"
+        if(dataSearch.laboratorio === "") history.push("/Inicio")
         let options = {
             body: form,
             headers: {"content-type": "application/json"}

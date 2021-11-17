@@ -7,7 +7,7 @@ const Error404 = () =>{
     const handleClick = () => history.push("/Inicio");
     return(
         <section className="Banner center column"> 
-        <i class="fas fa-exclamation-circle fa-8x color-cyan"></i>
+        <i className="fas fa-exclamation-circle fa-8x color-cyan"></i>
         <span className="Span-Eror404">Oops! That page can’t be found.</span>
         <p className="Banner__Text4">
             Parece que no se encontró nada en esta ubicación.

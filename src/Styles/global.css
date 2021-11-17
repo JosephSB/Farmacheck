@@ -1,6 +1,6 @@
 
 .bg-image{
-    background-image: url('../Assets/FONDO.png');
+    background-image: url('../Assets/Img/FONDO.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -13,11 +13,11 @@
 
 @font-face {
     font-family: canada-type-gibson;
-    src: local('canada-type-gibson'),url(../Fonts/Canada-Type-Gibson-Regular.ttf);
+    src: local('canada-type-gibson'),url(../Assets/Fonts/Canada-Type-Gibson-Regular.ttf);
 }
 @font-face {
     font-family: gibson-bold;
-    src: local('gibson-bold'),url(../Fonts/Canada-Type-Gibson-Bold.ttf) ;
+    src: local('gibson-bold'),url(../Assets/Fonts/Canada-Type-Gibson-Bold.ttf) ;
 }
 
 .center{
@@ -34,6 +34,11 @@
 .wrap{
     display: flex;
     flex-wrap: wrap;
+}
+.text-wrap{
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
 }
 .column{
     display: flex;

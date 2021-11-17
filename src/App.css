@@ -1,12 +1,3 @@
-.Banner, .Banner__Contenido{
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
-
-.Banner__Text4, .Banner__Title5{
-    margin: 30px 0;
-}
 
 /*--------------------MODAL------------*/
 
@@ -39,7 +30,16 @@
 }
 
 /*-------------HOME-------------*/
-.Banner{
+.Banner, .Banner__Contenido,.Banner-2{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.Banner__Text4, .Banner__Title5{
+    margin: 30px 0;
+}
+.Banner,.Content-DatosAbiertos,.Banner-2{
     padding: 30px 10px;
     padding-top: 110px;
     min-height: 700px;
@@ -197,6 +197,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 .Banner__Box-ProductDetail{
     width: 100%;
@@ -225,6 +226,282 @@
     text-align: end;
 }
 
+.Banner__Item-Ubicacion{
+    padding: 10px;
+    background-color: var(--PrimaryCorlor);
+    border-radius: 30px;
+    width: 35px;
+    height: 35px;
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.Banner__Button-Ubicacion{
+    width: 170px;
+    height: 42px;
+    border-radius: 5px;
+    background-color: var(--PrimaryCorlor);
+    color: white;
+    font-size: 20px;
+    transition: background-color .5s;
+}
+.Banner__Button-Ubicacion:hover{
+    background-color: #25aec0;
+}
+
+.SpanProduct{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: var(--SecondaryCorlor);
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    font-size: 10px;
+    word-wrap: break-word;
+}
+.SpanProduct::after{
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid var(--SecondaryCorlor);
+}
+
+/*----------------INFO-FARMA-------*/
+.Content-dowload, .Download,.Content-NotaMetodo,
+.Banner-2,.Section-Skills{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.Banner-2{
+    background-image: url('./Assets/Img/FONDO.png');
+    background-size: cover;
+    background-color: #008192;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: start;
+}
+.Banner-Info{
+    width: 100%;
+    max-width: 470px;
+    margin: 20px;
+}
+.Banner2-Title,.Banner2-parrafo{
+    color: white;
+    font-size: 38px;
+}
+.Banner2-parrafo{
+    font-size: 16px;
+    margin: 20px 0;
+    line-height: 1.5rem;
+}
+.Banner2-Img{
+    width: 100%;
+    max-width: 500px;
+}
+.Quiz{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.Quiz{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 10px;
+}
+.Quiz-Subtitle,.Reporte-Title{
+    color: var(--PrimaryCorlor);
+    font-family: gibson-bold, sans-serif;
+    font-size: 28px;
+    margin: 30px 0;
+}
+.Content-Quiz{
+    width: 100%;
+    max-width: 680px;
+    min-height: 30px;
+    max-height: 80px;
+    margin: 20px 0 0 0;
+    z-index: 2;
+    border: 1px solid #2099AA;
+    background-color: white;
+}
+.Section-Skills{
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.Quiz-Parrafo,.Quiz-BigParrafo{
+    color: #2099AA;
+    font-family: canada-type-gibson, sans-serif;
+    font-size: 14px;
+}
+.Quiz-BigParrafo{
+    font-size: 36px;
+    margin: 20px 0;
+    text-align: center;
+}
+.skill{
+    width: 180px;
+    height: 80px;
+    margin: 10px;
+}
+.skill-Subtitle,.skill-Subtitle--24{
+    font-size: 20px;
+    margin: 0;
+    padding-left: 10px;
+}
+.skill-Subtitle--24{
+    font-size: 28px;
+    font-family: gibson-bold;
+}
+.Content-Info{
+    width: 100%;
+    max-width: 680px;
+    box-shadow: 0px -1px 9px -3px rgba(0,0,0,0.61);
+    transition: all .5s;
+    overflow:hidden;
+    transform: translateY(-20%);
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/*---------------REPORTES--------------*/
+.Content-Reporte{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 10px;
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+.Reporte-Title{
+    font-family: canada-type-gibson;
+    margin: 10px 0;
+    max-width: 600px;
+}
+.Box-Info-Reporte,.Box-Info{
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Noticia{
+    width: 100%;
+    max-width: 673px;
+}
+.Noticia-Aside{
+    width: 100%;
+    max-width: 327px;
+    margin: 0 auto;
+    background-color: #f5f4f4;
+}
+.Noticia-Extra{
+    width: 100%;
+    max-width: 295px;
+    margin: 20px 10px;
+    text-align: start;
+}
+.Img-NoticiaExtra{
+    width: 100%;
+    max-width: 295px;
+}
+.Aside-Text{
+    font-family: gibson-bold, sans-serif;
+    font-size: 18px;
+    color: #2099AA;
+}
+
+/*----------------DATOS-ABIERTOS-------*/
+.Content-DatosAbiertos,.Content-dowload,.Content-NotaMetodo{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.Info-Text{
+    font-size: 14px;
+    line-height: 1.5rem;
+    text-align: start;
+}
+.Download{
+    width: 100%;
+    max-width: 447px;
+    box-shadow: 0px -1px 9px -3px rgba(0,0,0,0.61);
+    height: 120px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.Download-Text{
+    font-size: 24px;
+    color: var(--PrimaryCorlor);
+    text-align: center;
+    margin: 5px;
+}
+.Btn-Download{
+    width: 100%;
+    max-width: 190px;
+    height: 28px;
+    background-color: var(--PrimaryCorlor);
+    color: white;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.Box{
+    width: 100%;
+    max-width: 470px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.Box-Info{
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+/*--------------Page-Error----------------*/
+
+.Span-Eror404{
+    font-size: 50px;
+    margin: 20px 0;
+    position: relative;
+    color: var(--SecondaryCorlor);
+}
+.Span-Eror404::before{
+    content: "404";
+    position: absolute;
+    font-size: 40px;
+    top: -30px;
+    bottom: 0;
+    color: var(--PrimaryCorlor);
+}
+
+/*----------RESPONSIVE-----------*/
+@media screen and (max-width:1020px){
+    .Noticia-Aside{
+        max-width: 100%;
+    }
+}
 @media screen and (max-width:450px){
     .Banner__Box-ProductDetail{
         flex-direction: column;
@@ -251,42 +528,4 @@
     .Banner__Price--sn{
         text-align: center;
     }
-}
-
-.Banner__Item-Ubicacion{
-    padding: 10px;
-    background-color: var(--PrimaryCorlor);
-    border-radius: 30px;
-    width: 35px;
-    height: 35px;
-    color: white;
-    cursor: pointer;
-}
-.Banner__Button-Ubicacion{
-    width: 170px;
-    height: 42px;
-    border-radius: 5px;
-    background-color: var(--PrimaryCorlor);
-    color: white;
-    font-size: 20px;
-    transition: background-color .5s;
-}
-.Banner__Button-Ubicacion:hover{
-    background-color: #25aec0;
-}
-/*------------------------------*/
-
-.Span-Eror404{
-    font-size: 50px;
-    margin: 20px 0;
-    position: relative;
-    color: var(--SecondaryCorlor);
-}
-.Span-Eror404::before{
-    content: "404";
-    position: absolute;
-    font-size: 40px;
-    top: -30px;
-    bottom: 0;
-    color: var(--PrimaryCorlor);
 }

@@ -1,6 +1,7 @@
 import React,{useEffect,useState,useContext} from 'react';
+import { useHistory } from "react-router-dom";
 import { helpHttp } from '../../Helpers/helpHttp';
-import LOGOFARMA from '../../Assets/LOGOFARMA.png';
+import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
 import Loader from '../../Components/Loader';
 import ItemPrice from '../../Components/itemPrice';
 import DataContext from '../../Context/DataContext';
@@ -16,6 +17,8 @@ const PriceProduct = () =>{
     const [message, setMessage] = useState("");
     const [loader, setLoader] = useState(false);
     const [moreProducts, setMoreProducts] = useState(false);
+
+    let history = useHistory();
 
     /*-----------Context-----------------*/
     const {producto,presentacion,concentracion}= useContext(DataContext);
@@ -48,7 +51,7 @@ const PriceProduct = () =>{
             "presentacion" :presentacion,
             "concentracion":concentracion
         }
-        if(producto === "") window.location.href ="/Inicio"
+        if(producto === "") history.push("/Inicio")
         let options = {
             body: form,
             headers: {"content-type": "application/json"}

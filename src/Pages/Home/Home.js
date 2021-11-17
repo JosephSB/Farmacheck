@@ -2,7 +2,7 @@ import React,{useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Modal from "../../Components/Modal";
-import LOGOFARMA from '../../Assets/LOGOFARMA.png';
+import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
 
 const Home = () =>{
     /*-----------STATES-----------------*/

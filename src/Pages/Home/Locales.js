@@ -1,6 +1,7 @@
 import React,{useEffect,useState,useContext} from 'react';
+import { useHistory } from "react-router-dom";
 import { helpHttp } from '../../Helpers/helpHttp';
-import LOGOFARMA from '../../Assets/LOGOFARMA.png';
+import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
 import Loader from '../../Components/Loader';
 import FooterSearch from '../../Components/footerSearch';
 import DataContext from '../../Context/DataContext';
@@ -15,6 +16,8 @@ const Locales = () =>{
     const [locations, setLocations] = useState([]);
     const [totalProducts, setTotalProducts] = useState();
     const [moreProducts, setMoreProducts] = useState(false);
+
+    let history = useHistory();
 
     /*-----------Context-----------------*/
     const dataSearch = useContext(DataContext);
@@ -33,7 +36,7 @@ const Locales = () =>{
             "provincia":dataSearch.provincia,
             "distrito": dataSearch.distrito
         }
-        if(dataSearch.laboratorio === "") window.location.href ="/Inicio"
+        if(dataSearch.laboratorio === "") history.push("/Inicio")
         let options = {
             body: form,
             headers: {"content-type": "application/json"}
