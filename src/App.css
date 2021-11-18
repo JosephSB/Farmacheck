@@ -20,6 +20,7 @@
     font-family: canada-type-gibson, sans-serif;
     font-size: 14px;
     margin: 15px 0;
+    text-align: justify;
 }
 .cros-modal{
     position: absolute;
@@ -40,7 +41,7 @@
     margin: 30px 0;
 }
 .Banner,.Content-DatosAbiertos,.Banner-2{
-    padding: 30px 10px;
+    padding: 30px 15px;
     padding-top: 110px;
     min-height: 700px;
     margin: auto;
@@ -55,7 +56,7 @@
 .Banner__Text4,.Banner__Text4--option{
     font-size: 16px;
 }
-.Banner__Text6{
+.Banner__Text6,.Banner__Text6--sm{
     font-size: 12px;
 }
 .Banner__Title6{
@@ -162,13 +163,17 @@
 .Banner__Text4--option{
     margin: 10px 0;
     cursor: pointer;
+    transition: color .5s;
+}
+.Banner__Text4--option:hover{
+    color: var(--PrimaryCorlor);
 }
 .Banner__InfoSearch{
     width: 100%;
     color: var(--SecondaryCorlor);
     text-align: start;
 }
-.Banner__Text4--sm{
+.Banner__Text4--sm,.Banner__Text6--sm{
     margin: 0;
 }
 /*-------
@@ -198,6 +203,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    padding: 10px 0;
 }
 .Banner__Box-ProductDetail{
     width: 100%;
@@ -208,6 +214,7 @@
     align-items: center;
     padding: 5px;
     text-align: start;
+    padding: 0;
 }
 .Banner__Datos-Product,.Banner__Datos-Ubicacion{
     width: 100%;
@@ -275,7 +282,21 @@
     border-left: 10px solid transparent;
     border-bottom: 10px solid var(--SecondaryCorlor);
 }
-
+.Select-Search{
+    width: 100%;
+    background-color: white;
+}
+.Option-Search{
+    color: var(--SecondaryCorlor);
+    text-align: start;
+    padding: 10px;
+    font-size: 14px;
+    transition: background-color .5s;
+    cursor: pointer;
+}
+.Option-Search:hover{
+    background-color: rgba(168, 168, 168, 0.5);
+}
 /*----------------INFO-FARMA-------*/
 .Content-dowload, .Download,.Content-NotaMetodo,
 .Banner-2,.Section-Skills{
@@ -305,6 +326,7 @@
     font-size: 16px;
     margin: 20px 0;
     line-height: 1.5rem;
+    text-align: justify;
 }
 .Banner2-Img{
     width: 100%;
@@ -443,7 +465,7 @@
 .Info-Text{
     font-size: 14px;
     line-height: 1.5rem;
-    text-align: start;
+    text-align: justify;
 }
 .Download{
     width: 100%;

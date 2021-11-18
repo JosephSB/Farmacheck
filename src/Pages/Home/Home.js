@@ -1,18 +1,22 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect,useContext} from "react";
 import { useHistory } from "react-router-dom";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { helpHttp } from '../../Helpers/helpHttp';
 import Modal from "../../Components/Modal";
 import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
+import DataContext from "../../Context/DataContext";
 
 const Home = () =>{
     /*-----------STATES-----------------*/
     const [message, setMessage] = useState('');
     const [modal, setModal] = useState(false);
+    const [resp, setResp] = useState([]);
     const [animateSpeak, setAnimateSpeak] = useState(false);
     const [compatible, setCompatible] = useState(true);
 
     /*-----hooks------*/
     let history = useHistory();
+    const dataSearch = useContext(DataContext);
     /*-----hook para escuchar microfono------*/
     const {
         transcript,
@@ -31,16 +35,46 @@ const Home = () =>{
             resetTranscript()
             SpeechRecognition.startListening()
             setTimeout(() => {
-                search()
                 SpeechRecognition.stopListening()
                 setAnimateSpeak(false)
+                search()
             }, 5000);
         }
     }
 
+    const searchInRealTime = () =>{
+        const form = {
+            "keyCode": process.env.REACT_APP_API_KEY_SERVICE,
+            "firstResult": 1,
+            "maxResults": 4,
+            "producto": message
+        }
+        let options = {
+            body: form,
+            headers: {"content-type": "application/json"}
+        }
+
+        let url = process.env.REACT_APP_API_KEY_PRODUCTS
+        helpHttp().post(url,options).then(res => {
+            if(res.errorCode === 0){
+                if(res.productos !== null) setResp(res.productos)
+                else setResp([{producto : 'No se encuentra ese producto'}])
+            }
+        })
+    }
+
     useEffect(() => {
-        setMessage(transcript)
-    }, [transcript]);
+        if(transcript) setMessage(transcript)
+        else {
+            if(message.length >= 2) searchInRealTime()
+            if(message.length < 2) setResp([])
+        }
+    }, [transcript,message]);
+
+    const SearchProduct = (e) =>{
+        dataSearch.producto = e.target.dataset.product
+        history.push("/Detalle")
+    }
 
     const search = (e) =>{
         if(message !== "") history.push(`/Products/${message}`);
@@ -74,6 +108,19 @@ const Home = () =>{
                             <i className="fas fa-search" onClick={search}></i>
                             <i className="fas fa-microphone" onClick={RecordVoice}></i>
                         </div>
+                    </div>
+                    <div className="Select-Search aparecerInvertido">
+                        {resp.map
+                        (item => 
+                            <div className="Option-Search aparecerInvertido" 
+                            onClick={SearchProduct} 
+                            data-product={item.producto}
+                            key={item.producto}
+                            >
+                                <i className="fas fa-search"></i>&nbsp; {item.producto}
+                            </div>
+                        )
+                        }
                     </div>
                     {animateSpeak && <p className="aparecer Error">Escuchando...</p>}
                     {!compatible && <p className="Error">NAVEGADOR NO COMPATIBLE PARA BUSCAR POR VOZ</p>}

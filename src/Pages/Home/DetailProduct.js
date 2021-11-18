@@ -52,6 +52,9 @@ const DetailProduct = () =>{
             <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
             <LinksSearch/>
             <div className="Banner__Contenido center column">
+                <div className="max-width textstart">
+                    <p className="Banner__Text6--sm">Producto: <strong>{product}</strong></p> 
+                </div>
                 {loader && <Loader message={"Buscando Productos..."} />}
                 {
                    data.map(
