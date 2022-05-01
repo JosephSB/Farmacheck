@@ -4,6 +4,7 @@ import Icon2 from '../Assets/Img/image 2.png';
 import Icon3 from '../Assets/Img/image 3.png';
 import Icon4 from '../Assets/Img/image 4.png';
 import Icon5 from '../Assets/Img/image 5.png';
+import Reporte1 from '../Assets/excel/Reporte1.xlsx';
 
 const DatosAbiertos = () =>{
     window.document.body.classList.remove('bg-image')
@@ -16,12 +17,12 @@ const DatosAbiertos = () =>{
             </p>
             <div className="Content-dowload">
                 <div className="Download">
-                    <p className="Download-Text">Descarga de datos acumulados</p>
-                    <button className="Btn-Download">Descargar la información en CSV</button>
-                </div>
-                <div className="Download">
                     <p className="Download-Text">Descarga de datos trimestrales</p>
-                    <button className="Btn-Download">Descargar la información en CSV</button>
+                    <a href={Reporte1} download>
+                    <button className="Btn-Download">
+                        Descargar la información en CSV
+                    </button>
+                    </a>
                 </div>
             </div>
             <h2 className="Quiz-Subtitle">Nota metodológica</h2>

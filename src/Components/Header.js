@@ -33,9 +33,11 @@ const Header = () =>{
                 <NavLink onClick={handleClick} className="Menu-link" exact to="/Informacion" activeClassName="ACTIVE">
                     ¿QUE ES FARMACHECK?
                 </NavLink>
+                {/*
                 <NavLink onClick={handleClick} className="Menu-link" exact to="/Reportes" activeClassName="ACTIVE">
                     REPORTE TRIMESTRAL
                 </NavLink>
+                */}
                 <NavLink onClick={handleClick} className="Menu-link" exact to="/Datos" activeClassName="ACTIVE">
                     DATOS ABIERTOS
                 </NavLink>
