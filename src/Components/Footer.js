@@ -5,7 +5,6 @@ const Footer = () =>{
     return(
         <footer className="footer center wrap">
             <p className="Footer-parrafo">
-                FarmaCheck 
             </p>
         </footer>
     )

@@ -44,7 +44,7 @@ const DatosAbiertos = () =>{
                         <div className="padding-lateral">
                             <p className="Info-Text color-cyan m-none"><strong>Número de medicamentos</strong></p>
                             <p className="Info-Text m-none">
-                                La data que tenemos incluye los precios de 7,000 medicamentos, que son los más 
+                                La data que tenemos incluye los precios de 3,000 medicamentos, que son los más 
                                 utilizados en las principales IPRESS del país. 
                             </p>
                         </div>
