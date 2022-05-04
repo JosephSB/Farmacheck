@@ -9,11 +9,9 @@ import SearchProduct from "../Pages/Home/SearchProduct";
 import DetailProduct from "../Pages/Home/DetailProduct";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
-import Ubicacion from "../Pages/Home/Ubicacion";
-import Locales from "../Pages/Home/Locales";
 import { DataProvider } from "../Context/DataContext";
 import Error404 from "../Pages/Error404";
-import GeoLocalizacion from "../Pages/Home/Geolocalizacion";
+import Locals from "../Pages/Home/Locals";
 
 const MainRouter = () => {
   return (
@@ -33,9 +31,7 @@ const MainRouter = () => {
           ></Route>
           <Route exact path="/Detalle" component={DetailProduct}></Route>
           <Route exact path="/Precios" component={PriceProduct}></Route>
-          <Route exact path="/localizacion" component={GeoLocalizacion}></Route>
-          <Route exact path="/Ubicacion" component={Ubicacion}></Route>
-          <Route exact path="/Locales" component={Locales}></Route>
+          <Route exact path="/locales" component={Locals}></Route>
           <Route path="*" component={Error404}></Route>
         </Switch>
         <Footer />

@@ -265,6 +265,21 @@
     background-color: #25aec0;
 }
 
+.content-btn-locals{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.btn-locals{
+    width: 50%;
+    background-color: var(--SecondaryCorlor);
+    color: white;
+    padding: 10px;
+}
+.btn-locals--active{
+    background-color: #25aec0;
+}
+
 .SpanProduct{
     position: absolute;
     left: 0;

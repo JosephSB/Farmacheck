@@ -1,63 +1,28 @@
 import React,{useState, useEffect,useContext} from "react";
 import { useHistory } from "react-router-dom";
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { helpHttp } from '../../Helpers/helpHttp';
 import Modal from "../../Components/Modal";
 import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
 import DataContext from "../../Context/DataContext";
+import { getProducts } from "../../services/farma.service";
+import useRecodVoice from "../../hooks/useRecordVoice";
 
 const Home = () =>{
-    /*-----------STATES-----------------*/
     const [message, setMessage] = useState('');
     const [modal, setModal] = useState(false);
     const [resp, setResp] = useState([]);
-    const [animateSpeak, setAnimateSpeak] = useState(false);
-    const [compatible, setCompatible] = useState(true);
-
-    /*-----hooks------*/
     let history = useHistory();
     const dataSearch = useContext(DataContext);
-    /*-----hook para escuchar microfono------*/
-    const {
-        transcript,
-        resetTranscript,
-        browserSupportsSpeechRecognition
-    } = useSpeechRecognition();
-
-    const RecordVoice = (e) =>{
-        if (!browserSupportsSpeechRecognition) {
-            setCompatible(false)
-            setTimeout(() => {
-                setCompatible(true)
-            }, 3000);
-        }else{
-            setAnimateSpeak(true)
-            resetTranscript()
-            SpeechRecognition.startListening()
-            setTimeout(() => {
-                SpeechRecognition.stopListening()
-                setAnimateSpeak(false)
-                search()
-            }, 5000);
-        }
-    }
+    const { transcript, RecordVoice,loading,compatible } = useRecodVoice();
 
     const searchInRealTime = () =>{
         const form = {
-            "keyCode": process.env.REACT_APP_API_KEY_SERVICE,
             "firstResult": 1,
             "maxResults": 4,
             "producto": message
         }
-        let options = {
-            body: form,
-            headers: {"content-type": "application/json"}
-        }
-
-        let url = process.env.REACT_APP_API_KEY_PRODUCTS
-        helpHttp().post(url,options).then(res => {
-            if(res.errorCode === 0){
-                if(res.productos !== null) setResp(res.productos)
+        getProducts(form).then( ({data}) => {
+            if(data.errorCode === 0){
+                if(data.productos !== null) setResp(data.productos)
                 else setResp([{producto : 'No se encuentra ese producto'}])
             }
         })
@@ -65,23 +30,22 @@ const Home = () =>{
 
     useEffect(() => {
         if(transcript) setMessage(transcript)
-        else {
-            if(message.length >= 2) searchInRealTime()
-            if(message.length < 2) setResp([])
-        }
-    }, [transcript,message]);
+    }, [transcript]);
+
+    useEffect(() => {
+        if(message.length >= 2) searchInRealTime()
+        if(message.length < 2) setResp([])
+    }, [message]);
 
     const SearchProduct = (e) =>{
         dataSearch.producto = e.target.dataset.product
         history.push("/Detalle")
     }
 
-    const search = (e) =>{
+    const search = () =>{
         if(message !== "") history.push(`/Products/${message}`);
     }
-    const handleChange = (e) =>{
-        setMessage(e.target.value)
-    }
+    const handleChange = (e) => setMessage(e.target.value)
     const handleModal = (e) => setModal(true)
 
     const handleKeyPress = (e) =>{
@@ -96,7 +60,7 @@ const Home = () =>{
                 <div className="Banner__Contenido"> 
                     <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
                     <p className="Banner__Text4">
-                        Ingresa aquí para conocer el precio promedio de 7,000 medicamentos que te ayudarán a tomar una decisión de compra informada.
+                        Ingresa aquí para conocer el precio promedio de 3,000 medicamentos que te ayudarán a tomar una decisión de compra informada.
                     </p>
                     <p className=" Banner__Title5 Banner__Title5--Cyan">
                         <strong>¿QUÉ MEDICAMENTO ESTÁS BUSCANDO?</strong>
@@ -122,7 +86,7 @@ const Home = () =>{
                         )
                         }
                     </div>
-                    {animateSpeak && <p className="aparecer Error">Escuchando...</p>}
+                    {loading && <p className="aparecer Error">Escuchando...</p>}
                     {!compatible && <p className="Error">NAVEGADOR NO COMPATIBLE PARA BUSCAR POR VOZ</p>}
                     <p className="Banner__Text6">
                         Al usar este buscador, estás sujeto a nuestros <span className="bor-bottom" onClick={handleModal}>términos y condiciones.</span>

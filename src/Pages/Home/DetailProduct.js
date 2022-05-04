@@ -1,11 +1,10 @@
-import React,{useEffect,useState,useContext} from 'react';
+import {useEffect,useState,useContext,Fragment} from 'react';
 import { useHistory } from "react-router-dom";
-import { helpHttp } from '../../Helpers/helpHttp'
-import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
 import Loader from '../../Components/Loader';
 import PresentacionProducto from '../../Components/PresentacionProducto';
 import DataContext from '../../Context/DataContext';
-import LinksSearch from '../../Components/LinksSearch';
+import WrapperSearch from '../../Components/wrappers/wrapperSearch';
+import { getDetailProduct } from '../../services/farma.service';
 
 const DetailProduct = () =>{
     const [loader, setLoader] = useState(false);
@@ -21,41 +20,36 @@ const DetailProduct = () =>{
     useEffect(() => {
         setLoader(true)
         const form = {
-            "keyCode": process.env.REACT_APP_API_KEY_SERVICE,
             "firstResult": 1,
             "maxResults": 10,
             "producto": product
         }
         if(product === "") history.push("/Inicio")
-        let options = {
-            body: form,
-            headers: {"content-type": "application/json"}
-        }
-        let url = process.env.REACT_APP_API_KEY_DETALLES
-        helpHttp().post(url,options).then(res => {
-            if(res.errorCode === 0){
-                setMessage(res.message)
-
-                if(res.presentaciones !== null ) setData(res.presentaciones)
+        getDetailProduct(form)
+        .then(({data}) => {
+            if(data.errorCode === 0){
+                setMessage(data.message)
+                if(data.presentaciones !== null ) setData(data.presentaciones)
                 else setMessage(`No se encontro mas informacion del producto ${product}`)
-
-                setLoader(false)
-                
-                if(res.presentaciones.length === 0)setMessage(`No se encontro mas informacion del producto ${product}`)
+                if(data.presentaciones.length === 0)setMessage(`No se encontro mas informacion del producto ${product}`)
             }
-        })
+        }).finally( ()=> setLoader(false) )
     }, []);
+
+    if(loader){
+        return <WrapperSearch><Loader message={"Buscando Productos"} /></WrapperSearch>
+    }
+    if(data.length === 0){
+        return <WrapperSearch><p className="Banner__Text4">{message}</p></WrapperSearch>
+    }
 
     window.document.body.classList.add('bg-image')
     return(
-        <section className="Banner center column">
-            <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
-            <LinksSearch/>
-            <div className="Banner__Contenido center column">
+        <WrapperSearch>
+            <Fragment>
                 <div className="max-width textstart">
                     <p className="Banner__Text6--sm">Producto: <strong>{product}</strong></p> 
                 </div>
-                {loader && <Loader message={"Buscando Productos..."} />}
                 {
                    data.map(
                        item => 
@@ -69,9 +63,8 @@ const DetailProduct = () =>{
                         product={product}
                        />) 
                 }
-                <p className="Banner__Text4">{message}</p>
-            </div>
-        </section>
+            </Fragment>
+        </WrapperSearch>
     )
 }
 

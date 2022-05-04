@@ -16,12 +16,12 @@ const InfoFarma = () =>{
             <section className="Banner-2 ">
                 <div className="Banner-Info">
                     <p className="Banner2-Title m-none">
-                        ¿QUE ES 
+                        ¿QUÉ ES 
                         <br/>
                         <strong>FARMACHECK?</strong>
                     </p>
                     <p className="Banner2-parrafo">
-                        FarmaCheck es una app que permite encontrar rápidamente un precio referencial de 7,000 medicamentos ofrecidos por boticas y farmacias privadas. De esta manera, pone al alcance del consumidor información transparente que le ayudará a tomar una decisión de compra informada.
+                        FarmaCheck es una herramienta que permite encontrar rápidamente un precio referencial de 3,000 medicamentos ofrecidos por boticas y farmacias privadas. De esta manera, pone al alcance del consumidor información transparente que le ayudará a tomar una decisión de compra informada.
                     </p>
                     <p className="Banner2-parrafo">
                         Esta es una iniciativa de la Asociación de EPS (APEPS) y la Asociación Peruana de Empresas de Seguros (APESEG) para brindar información oportuna y transparente al público que busca medicinas a precios competitivos.
@@ -38,9 +38,8 @@ const InfoFarma = () =>{
                     CIFRAS <strong>DESTACADAS</strong>
                 </p>
                 <div className="max-width center row  wrap space-around">
-                <Skill img={icon} score={2000} scoremin={0} descriptio={"descargas de app"} />
-                <Skill img={icon2} score={7000} scoremin={5000} descriptio={"medicamentos"}/>
-                <Skill img={icon3} score={18000} scoremin={16000} descriptio={"establecimientos analizados"}/>
+                <Skill img={icon2} score={3000} descriptio={"medicamentos"}/>
+                <Skill img={icon3} score={18000} descriptio={"establecimientos analizados"}/>
                 </div>
             </section>
         </>

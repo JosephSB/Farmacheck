@@ -2,11 +2,8 @@ import React,{useContext,useState,useEffect} from 'react';
 import DataContext from '../Context/DataContext';
 
 const PresentacionUbicacion = (props) =>{
-    /*-----------States-----------------*/
     const [animate, setAnimate] = useState(false);
     const [transition, setTransition] = useState(false);
-
-    /*-----------Context-----------------*/
     const dataSearch = useContext(DataContext);
 
     const handleClick = (e) =>{

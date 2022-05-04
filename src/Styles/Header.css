@@ -12,12 +12,13 @@
 }
 .Img-Marcas{
     margin: 0 10px;
-    width: 40%;
+    width: 50%;
     max-width: 132px;
 }
 .Menu{
     max-width: 900px;
     background-color: white;
+    justify-content: flex-end;
 }
 .Menu-link{
     text-decoration: none;
@@ -27,6 +28,7 @@
     font-size: 14px;
     text-align: center;
     padding: 0 5px;
+    margin: 0 0.5rem;
     box-sizing: border-box;
 }
 .bar-responsive{

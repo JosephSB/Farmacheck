@@ -1,12 +1,10 @@
-import { useEffect,useContext,useState } from "react";
-import LinksSearch from "../../Components/LinksSearch"
-import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
+import { useEffect,useContext,useState,Fragment } from "react";
 import { geolocated, geoPropTypes } from "react-geolocated";
-import { getGeolocate, getLocal } from "../../services/farma.service";
-import DataContext from "../../Context/DataContext";
+import { getGeolocate, getLocal } from "../../../../services/farma.service";
+import DataContext from "../../../../Context/DataContext";
 import { useHistory } from "react-router-dom";
-import Loader from "../../Components/Loader";
-import ItemUbicacion from "../../Components/itemUbicacion";
+import Loader from "../../../../Components/Loader";
+import ItemUbicacion from "../../../../Components/itemUbicacion";
 
 const GeoLocalizacion = (props) => {
     let history = useHistory();
@@ -17,7 +15,7 @@ const GeoLocalizacion = (props) => {
 
     async function search(productDepartment, productProvince, productDistrict) {
         var results = [];
-
+        dataSearch.distrito = productDistrict;
         const data = {
             firstResult: 1, 
             maxResults: 100,
@@ -74,7 +72,7 @@ const GeoLocalizacion = (props) => {
             props.isGeolocationEnabled &&
             props.coords) {
 
-            getGeolocate({latitude: -6.771298, longitude: -79.855666})
+            getGeolocate({latitude: props.coords.latitude, longitude: props.coords.longitude})
                 .then(res => {
                     console.log(res)
                     let result = getResultsFiltered(res.data.results);
@@ -99,38 +97,33 @@ const GeoLocalizacion = (props) => {
         }
     }, [props.coords]);
 
+    if(loader){
+        return <Loader message={"Buscando locales en tu ubicacion"}/>
+    }
+    if(data.length === 0){
+        return <p className="Banner__Text4--option">{`No se encontro ${dataSearch.producto} en ${dataSearch.provincia}, ${dataSearch.distrito}`}</p>
+    }
+
     window.document.body.classList.add('bg-image')
     return (
-        <section className="Banner center column">
-            <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK" />
-            <LinksSearch />
-            <div className="Banner__Contenido center column">
-            {loader 
-                    ? 
-                    <Loader message={"Buscando Precios..."}/>
-                    :
-                    <>
-                        {
-                        <div className="Banner__InfoSearch">
-                           {/* <p className="Banner__Text4--sm">Total de Resultados: {totalProducts}</p>*/}
-                            <p className="Banner__Text4--sm">Resultados en <strong>{dataSearch.distrito}</strong></p>
-                        </div>
-                        }
-                    </>
-                }
-                {
-                    data.map(
-                        (data, index) => 
-                        <ItemUbicacion
-                            key={index}
-                            marca={data.nombreComercial}
-                            laboratorio={data.direccion}
-                            precio={data.precio}
-                        />
-                    )
-                }
+        <Fragment>
+            
+            <div className="Banner__InfoSearch">
+               {/* <p className="Banner__Text4--sm">Total de Resultados: {totalProducts}</p>*/}
+                <p className="Banner__Text4--sm">Resultados en <strong>{dataSearch.distrito}</strong></p>
             </div>
-        </section>
+            {
+                data.map(
+                    (data, index) => 
+                    <ItemUbicacion
+                        key={index}
+                        marca={data.nombreComercial}
+                        laboratorio={data.direccion}
+                        precio={data.precio}
+                    />
+                )
+            }
+        </Fragment>
     )
 }
 

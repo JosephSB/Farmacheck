@@ -1,12 +1,10 @@
-import React,{useEffect,useState,useContext } from 'react';
-import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
+import {useEffect,useState,useContext,Fragment } from 'react';
 import {useParams} from 'react-router';
 import { useHistory } from 'react-router-dom';
-import { helpHttp } from '../../Helpers/helpHttp';
 import Loader from '../../Components/Loader';
 import DataContext from '../../Context/DataContext';
-import LinksSearch from '../../Components/LinksSearch';
-
+import { getProducts } from '../../services/farma.service';
+import WrapperSearch from '../../Components/wrappers/wrapperSearch';
 
 const SearchProduct = () =>{
     const [products, setProducts] = useState([]);
@@ -26,29 +24,22 @@ const SearchProduct = () =>{
     useEffect(() => {
         setLoader(true)
         const form = {
-            "keyCode": process.env.REACT_APP_API_KEY_SERVICE,
             "firstResult": page,
             "maxResults": 6,
             "producto": product
         }
-        let options = {
-            body: form,
-            headers: {"content-type": "application/json"}
-        }
 
-        let url = process.env.REACT_APP_API_KEY_PRODUCTS
-        helpHttp().post(url,options).then(res => {
-            if(res.errorCode === 0){
-                setMessage(res.message)
-                let aux = products.concat(res.productos);
-                if(res.productos !== null) setProducts(aux)
+        getProducts(form)
+        .then(({data}) => {
+            if(data.errorCode === 0){
+                setMessage(data.message)
+                let aux = products.concat(data.productos);
+                if(data.productos !== null) setProducts(aux)
                 else setMessage(`No se Encontro el producto ${product}`)
 
-                BtnMoreProducts(aux.length,res.total)
-
-                setLoader(false)
+                BtnMoreProducts(aux.length,data.total)
             }
-        })
+        }).finally( ()=> setLoader(false) )
  
     }, [page]);
 
@@ -57,18 +48,15 @@ const SearchProduct = () =>{
         history.push("/Detalle")
     }
 
-    const clickMorePorducts = (e) =>{
-        setPage(page+1)
-    }
+    const clickMorePorducts = (e) =>setPage(page+1)
     
+    if (loader) return <Loader message={"Buscando Productos"} />
+
     window.document.body.classList.add('bg-image')
     return(
-        <section className="Banner center column">
-            <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
-            <LinksSearch/>
-            <div className="Banner__Contenido center column">
-                {loader && <Loader message={"Buscando Productos..."} />}
-                {
+        <WrapperSearch>
+            <Fragment>
+            {
                 products.length > 0 
                     ?
                         <>
@@ -88,8 +76,8 @@ const SearchProduct = () =>{
                         <p>{message}</p>
                 }
                 {moreProducts && <div onClick={clickMorePorducts} className="Banner__Option-More-Product center" >VER MAS</div>}
-            </div>
-        </section>
+            </Fragment>
+        </WrapperSearch>
     )
 }
 
