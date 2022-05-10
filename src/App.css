@@ -262,7 +262,7 @@
     transition: background-color .5s;
 }
 .Banner__Button-Ubicacion:hover{
-    background-color: #25aec0;
+    background-color: var(--PrimaryCorlor);
 }
 
 .content-btn-locals{
@@ -277,7 +277,7 @@
     padding: 10px;
 }
 .btn-locals--active{
-    background-color: #25aec0;
+    background-color: var(--PrimaryCorlor);
 }
 
 .SpanProduct{
@@ -332,7 +332,7 @@
 .Banner-2{
     background-image: url('./Assets/Img/FONDO.png');
     background-size: cover;
-    background-color: #008192;
+    background-color: var(--PrimaryCorlor);
     margin: 0 auto;
     justify-content: center;
     text-align: start;
@@ -382,7 +382,7 @@
     max-height: 80px;
     margin: 20px 0 0 0;
     z-index: 2;
-    border: 1px solid #2099AA;
+    border: 1px solid var(--PrimaryCorlor);
     background-color: white;
 }
 .Section-Skills{
@@ -393,7 +393,7 @@
     flex-direction: column;
 }
 .Quiz-Parrafo,.Quiz-BigParrafo{
-    color: #2099AA;
+    color: var(--PrimaryCorlor);
     font-family: canada-type-gibson, sans-serif;
     font-size: 14px;
 }
@@ -476,7 +476,7 @@
 .Aside-Text{
     font-family: gibson-bold, sans-serif;
     font-size: 18px;
-    color: #2099AA;
+    color: var(--PrimaryCorlor);
 }
 
 /*----------------DATOS-ABIERTOS-------*/
@@ -508,7 +508,7 @@
 .Btn-Download{
     width: 100%;
     max-width: 190px;
-    height: 28px;
+    padding: 10px;
     background-color: var(--PrimaryCorlor);
     color: white;
     font-size: 12px;

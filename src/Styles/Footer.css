@@ -1,7 +1,6 @@
 
 .footer{
-    background: rgb(4,112,127);
-    background: linear-gradient(0deg, rgba(4,112,127,1) 0%, rgba(31,152,169,1) 100%);
+    background: var(--PrimaryCorlor);
     width: 100%;
     min-height: 50px;
     margin-top: auto;

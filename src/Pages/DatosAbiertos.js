@@ -4,7 +4,7 @@ import Icon2 from '../Assets/Img/image 2.png';
 import Icon3 from '../Assets/Img/image 3.png';
 import Icon4 from '../Assets/Img/image 4.png';
 import Icon5 from '../Assets/Img/image 5.png';
-import Reporte1 from '../Assets/excel/Reporte1.xlsx';
+import Reporte1 from '../Assets/excel/Reporte 9B.csv';
 
 const DatosAbiertos = () =>{
     window.document.body.classList.remove('bg-image')
@@ -18,7 +18,7 @@ const DatosAbiertos = () =>{
             <div className="Content-dowload">
                 <div className="Download">
                     <p className="Download-Text">Descarga de datos trimestrales</p>
-                    <a href={Reporte1} download>
+                    <a href={Reporte1} download="Precios históricos (Reporte 9B)">
                     <button className="Btn-Download">
                         Descargar la información en CSV
                     </button>

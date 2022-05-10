@@ -1,7 +1,7 @@
 import React,{useState, useEffect,useContext} from "react";
 import { useHistory } from "react-router-dom";
 import Modal from "../../Components/Modal";
-import LOGOFARMA from '../../Assets/Img/LOGOFARMA.png';
+import LOGOFARMA from '../../Assets/Img/LogoFarmacheck.png';
 import DataContext from "../../Context/DataContext";
 import { getProducts } from "../../services/farma.service";
 import useRecodVoice from "../../hooks/useRecordVoice";

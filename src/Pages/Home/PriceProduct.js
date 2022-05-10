@@ -67,7 +67,7 @@ const PriceProduct = () => {
     }
 
     if (loader) {
-        return <Loader message={"Buscando Precios"} />
+        return <WrapperSearch><Loader message={"Buscando Precios"} /></WrapperSearch>
     }
 
     window.document.body.classList.add('bg-image')

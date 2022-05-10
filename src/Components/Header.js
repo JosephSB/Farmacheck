@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoApeps from '../Assets/Img/LOGO APEPS.png';
-import LogoAPESEG from '../Assets/Img/LOGO APESEG.png';
+import LogoApeps from '../Assets/Img/APEPS.png';
+import LogoAPESEG from '../Assets/Img/APESEG.png';
 import	'../Styles/Header.css';
 
 const Header = () =>{
@@ -14,7 +14,7 @@ const Header = () =>{
     return(
         <header className="Header center row">
             <div className="Box-Tools center row start">
-                <div className="Box-Marcas row">
+                <div className="Box-Marcas center row">
                     <a href="https://www.apeseg.org.pe/" className="Img-Marcas" target="_blank" rel="noreferrer">
                         <img className="max-width" src={LogoAPESEG} alt="APESEG"/>
                     </a>

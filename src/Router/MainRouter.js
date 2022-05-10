@@ -16,7 +16,7 @@ import Locals from "../Pages/Home/Locals";
 const MainRouter = () => {
   return (
     <DataProvider>
-      <Router basename="/farmacheck">
+      <Router basename="/">
         <Header />
         <Switch>
           <Route exact path="/" component={Home}></Route>
