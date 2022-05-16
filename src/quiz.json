@@ -18,7 +18,7 @@
         {
             "id": 3,
             "quiz": "¿Qué cantidad de medicamentos abarca FarmaCheck?",
-            "answer": "FarmaCheck se concentra en el procesamiento y análisis de alrededor de 7 mil medicamentos consumidos por el sistema privado de salud."
+            "answer": "FarmaCheck se concentra en el procesamiento y análisis de alrededor de más de 3,000 medicamentos consumidos por el sistema privado de salud."
         },
         {
             "id": 4,
@@ -29,7 +29,7 @@
             "id": 5,
             "quiz": "¿Cómo funciona FarmaCheck?",
             "answer": 
-            " FarmaCheck toma como insumo la información que Digemid hace pública a través de su Observatorio de Medicamentos, la enriquece con otras fuentes a nivel nacional y la ordena y procesa para entregar el costo promedio de un medicamento. Con esa información el usuario sabrá si en el establecimiento que eligió para adquirir sus medicinas tiene el precio más competitivo o es muy elevado, y decidirá si desea buscar otras opciones. La labor de la aplicación es orientar a las personas para que puedan encontrar la mejor alternativa. FarmaCheck está disponible las 24 horas del día, los 7 días de la semana y cualquiera puede acceder sin problemas, a través de un celular con datos móviles (Internet)."
+            "La labor de la herramienta es orientar a las personas para que puedan encontrar la mejor alternativa. FarmaCheck está disponible las 24 horas del día, los 7 días de la semana y cualquiera puede acceder sin problemas, a través de un celular con datos móviles (Internet)."
         },
         {
             "id": 6,

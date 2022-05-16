@@ -15,11 +15,11 @@ const Header = () =>{
         <header className="Header center row">
             <div className="Box-Tools center row start">
                 <div className="Box-Marcas center row">
+                    <a href="http://www.apeps.org.pe/" className="Img-Marcas center" target="_blank" rel="noreferrer">
+                        <img className="max-width" src={LogoApeps} alt="APEPS"/>
+                    </a>
                     <a href="https://www.apeseg.org.pe/" className="Img-Marcas" target="_blank" rel="noreferrer">
                         <img className="max-width" src={LogoAPESEG} alt="APESEG"/>
-                    </a>
-                    <a href="http://www.apeps.org.pe/" className="Img-Marcas" target="_blank" rel="noreferrer">
-                        <img className="max-width" src={LogoApeps} alt="APEPS"/>
                     </a>
                 </div>
                 <div className="bar-responsive" onClick={handleClick}>
@@ -31,7 +31,7 @@ const Header = () =>{
                     INICIO
                 </NavLink>
                 <NavLink onClick={handleClick} className="Menu-link" exact to="/Informacion" activeClassName="ACTIVE">
-                    ¿QUE ES FARMACHECK?
+                    ¿QUÉ ES FARMACHECK?
                 </NavLink>
                 {/*
                 <NavLink onClick={handleClick} className="Menu-link" exact to="/Reportes" activeClassName="ACTIVE">

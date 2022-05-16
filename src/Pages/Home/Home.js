@@ -22,6 +22,7 @@ const Home = () =>{
         }
         getProducts(form).then( ({data}) => {
             if(data.errorCode === 0){
+                console.log(data)
                 if(data.productos !== null) setResp(data.productos)
                 else setResp([{producto : 'No se encuentra ese producto'}])
             }
@@ -60,7 +61,7 @@ const Home = () =>{
                 <div className="Banner__Contenido"> 
                     <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
                     <p className="Banner__Text4">
-                        Ingresa aquí para conocer el precio promedio de 3,000 medicamentos que te ayudarán a tomar una decisión de compra informada.
+                        Ingresa aquí para conocer el precio promedio de más de 3,000 medicamentos que te ayudarán a tomar una decisión de compra informada.
                     </p>
                     <p className=" Banner__Title5 Banner__Title5--Cyan">
                         <strong>¿QUÉ MEDICAMENTO ESTÁS BUSCANDO?</strong>

@@ -21,7 +21,7 @@ const InfoFarma = () =>{
                         <strong>FARMACHECK?</strong>
                     </p>
                     <p className="Banner2-parrafo">
-                        FarmaCheck es una herramienta que permite encontrar rápidamente un precio referencial de 3,000 medicamentos ofrecidos por boticas y farmacias privadas. De esta manera, pone al alcance del consumidor información transparente que le ayudará a tomar una decisión de compra informada.
+                        FarmaCheck es una herramienta que permite encontrar rápidamente un precio referencial de más de 3,000 medicamentos ofrecidos por boticas y farmacias privadas. De esta manera, pone al alcance del consumidor información transparente que le ayudará a tomar una decisión de compra informada.
                     </p>
                     <p className="Banner2-parrafo">
                         Esta es una iniciativa de la Asociación de EPS (APEPS) y la Asociación Peruana de Empresas de Seguros (APESEG) para brindar información oportuna y transparente al público que busca medicinas a precios competitivos.
