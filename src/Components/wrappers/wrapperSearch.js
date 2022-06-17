@@ -1,4 +1,4 @@
-import LOGOFARMA from '../../Assets/Img/LogoFarmacheck.png';
+import LOGOFARMA from '../../Assets/Img/Logo.png';
 import LinksSearch from '../LinksSearch';
 
 const WrapperSearch = ({children}) => {

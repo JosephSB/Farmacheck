@@ -1,0 +1,35 @@
+{
+    "quiz": [ {
+        "id": 1,
+        "quiz": "¿Qué valor agregado tiene FarmaCheck?",
+        "answer": "FarmaCheck presenta los precios predominantes del mercado farmacéutico  privado utilizando como insumo la información que publica DIGEMID. De esta manera, antes de adquirir o realizar pagos por medicamentos, se  podrá disponer  de una  referencia para compras informadas."
+    },
+    {
+        "id": 2,
+        "quiz": "¿Cuál es el periodo de análisis?",
+        "answer": "FarmaCheck tiene información de precios de medicamentos desde Julio de 2020 hasta la actualidad."
+    },
+    {
+        "id": 3,
+        "quiz": "¿Qué cantidad de medicamentos abarca FarmaCheck?",
+        "answer": "FarmaCheck se concentra en el procesamiento y análisis de alrededor de más de 3,000 medicamentos consumidos por el sistema privado de salud."
+    },
+    {
+        "id": 4,
+        "quiz": "¿Con qué frecuencia se actualizará la información de precios?",
+        "answer": "La información será actualizada trimestralmente."
+    },
+    {
+        "id": 5,
+        "quiz": "¿Cómo funciona FarmaCheck?",
+        "answer": 
+        "La labor de la herramienta es orientar a las personas para que puedan encontrar la mejor alternativa. FarmaCheck está disponible las 24 horas del día, los 7 días de la semana y cualquiera puede acceder sin problemas, a través de un celular con datos móviles (Internet)."
+    },
+    {
+        "id": 6,
+        "quiz": "La aplicación solo brinda el precio promedio de los medicamentos. ¿De qué me sirve eso?",
+        "answer": 
+        "Con esa información el usuario sabrá si en el establecimiento que eligió para adquirir sus medicinas, qué tan cerca o lejos al precio de referencia de mercado está el precio de dichos medicamentos, y decidirá si desea buscar otras opciones. La labor de la aplicación es orientar a las personas. \n \nVale la pena recalcar que se trata de un precio referencial que hemos tomado luego de procesar la información de más de 18 mil establecimientos farmacéuticos, los cuales están en la obligación a reportar cualquier cambio en dichos precios. Esta información es obtenida regularmente a través de entidades como Digemid, y otras fuentes a nivel nacional, con la finalidad de promover los mejores precios para los consumidores."
+    }
+]
+}

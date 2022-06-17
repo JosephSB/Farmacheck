@@ -10,22 +10,24 @@ const DatosAbiertos = () =>{
     window.document.body.classList.remove('bg-image')
     return(
         <div className="Content-DatosAbiertos">
-            <h1 className="Quiz-Subtitle">Datos abiertos FarmaCheck</h1>
+            <h1 className="Quiz-Subtitle">DATOS ABIERTOS DE FARMACHECK</h1>
             <p className="Info-Text padding-lateral">
-                ¿Quieres acceder a la data de precios promedio de medicamentos en el Perú? En esta sección 
-                podrás descargar la información trabajada por Apeseg y Apeps de manera gratuita.
+            Ponemos a disposición del público en general la información histórica de los
+            precios referenciales de medicamentos en el Perú desde enero 2021, que son la
+            fuente de información de FarmaCheck, a fin de que los interesados puedan
+            utilizarla para fines académicos o periodísticos.
             </p>
             <div className="Content-dowload">
                 <div className="Download">
-                    <p className="Download-Text">Descarga de datos trimestrales</p>
+                    <p className="Download-Text">Información en CSV</p>
                     <a href={Reporte1} download="Precios históricos (Reporte 9B)">
                     <button className="Btn-Download">
-                        Descargar la información en CSV
+                        Descarga aquí
                     </button>
                     </a>
                 </div>
             </div>
-            <h2 className="Quiz-Subtitle">Nota metodológica</h2>
+            <h2 className="Quiz-Subtitle">APUNTES METODÓLOGICOS</h2>
             <div className="Content-NotaMetodo">
                 <div className="Box">
                     <div className="Box-Info">
@@ -33,30 +35,8 @@ const DatosAbiertos = () =>{
                         <div className="padding-lateral">
                             <p className="Info-Text color-cyan m-none"><strong>Fuente</strong></p>
                             <p className="Info-Text m-none">
-                                Se recoge data del Observatorio de la Dirección General de Medicamentos (Digemid), 
-                                de las Instituciones Prestadoras de Servicios de Salud (IPRESS) y de la 
-                                Superintendencia Nacional de Salud (SuSalud). 
-                            </p>
-                        </div>
-                    </div>
-                    <div className="Box-Info">
-                        <img src={Icon2} alt="Search"/>
-                        <div className="padding-lateral">
-                            <p className="Info-Text color-cyan m-none"><strong>Número de medicamentos</strong></p>
-                            <p className="Info-Text m-none">
-                                La data que tenemos incluye los precios de más de 3,000 medicamentos, que son los más 
-                                utilizados en las principales IPRESS del país. 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="Box">
-                    <div className="Box-Info">
-                        <img src={Icon3} alt="Search"/>
-                        <div className="padding-lateral">
-                            <p className="Info-Text color-cyan m-none"><strong>Periodo de análisis</strong></p>
-                            <p className="Info-Text m-none">
-                                La información ofrecida reúne datos desde los tres últimos años. 
+                                Los datos se recogen del Observatorio de la Dirección General de Medicamentos
+                                (DIGEMID).
                             </p>
                         </div>
                     </div>
@@ -69,12 +49,33 @@ const DatosAbiertos = () =>{
                             </p>
                         </div>
                     </div>
+                </div>
+                <div className="Box">
+                    {/*<div className="Box-Info">
+                        <img src={Icon3} alt="Search"/>
+                        <div className="padding-lateral">
+                            <p className="Info-Text color-cyan m-none"><strong>Periodo de análisis</strong></p>
+                            <p className="Info-Text m-none">
+                                La información ofrecida reúne datos desde los tres últimos años. 
+                            </p>
+                        </div>
+    </div>*/}
+                        <div className="Box-Info">
+                        <img src={Icon2} alt="Search"/>
+                        <div className="padding-lateral">
+                            <p className="Info-Text color-cyan m-none"><strong>Número de medicamentos</strong></p>
+                            <p className="Info-Text m-none">
+                            Los datos que tenemos incluye los precios de más de 4,000
+                            medicamentos, ofrecidos por boticas y farmacias privadas.
+                            </p>
+                        </div>
+                    </div>
                     <div className="Box-Info">
                         <img src={Icon5} alt="Search"/>
                         <div className="padding-lateral">
-                            <p className="Info-Text color-cyan m-none"><strong>Actualización</strong></p>
+                            <p className="Info-Text color-cyan m-none"><strong>Fecha de actualización</strong></p>
                             <p className="Info-Text m-none">
-                                La data será actualizada los últimos días de cada mes.
+                            Los datos serán actualizados trimestralmente.
                             </p>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import React,{useState, useEffect,useContext} from "react";
 import { useHistory } from "react-router-dom";
 import Modal from "../../Components/Modal";
-import LOGOFARMA from '../../Assets/Img/LogoFarmacheck.png';
+import LOGOFARMA from '../../Assets/Img/Logo.png';
 import DataContext from "../../Context/DataContext";
 import { getProducts } from "../../services/farma.service";
 import useRecodVoice from "../../hooks/useRecordVoice";
@@ -61,7 +61,7 @@ const Home = () =>{
                 <div className="Banner__Contenido"> 
                     <img className="Banner__Logo" src={LOGOFARMA} alt="FARMACHECK"/>
                     <p className="Banner__Text4">
-                        Ingresa aquí para conocer el precio promedio de más de 3,000 medicamentos que te ayudarán a tomar una decisión de compra informada.
+                        Conoce el precio referencial de más de 4,000 medicamentos que te ayudará a tomar una decisión de compra informada.
                     </p>
                     <p className=" Banner__Title5 Banner__Title5--Cyan">
                         <strong>¿QUÉ MEDICAMENTO ESTÁS BUSCANDO?</strong>

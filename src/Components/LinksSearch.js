@@ -13,7 +13,7 @@ const LinksSearch = () =>{
                 Regresar
             </button>
             <NavLink className="Banner__Btn-Back center" exact to="/Inicio" activeClassName="ACTIVE">
-                Realizar otra busqueda
+                Realizar otra búsqueda
             </NavLink>
         </div>
     )
