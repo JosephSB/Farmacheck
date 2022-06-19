@@ -31,42 +31,22 @@ const DatosAbiertos = () =>{
             <div className="Content-NotaMetodo">
                 <div className="Box">
                     <div className="Box-Info">
-                        <img src={Icon1} alt="Search"/>
-                        <div className="padding-lateral">
-                            <p className="Info-Text color-cyan m-none"><strong>Fuente</strong></p>
-                            <p className="Info-Text m-none">
-                                Los datos se recogen del Observatorio de la Dirección General de Medicamentos
-                                (DIGEMID).
-                            </p>
-                        </div>
-                    </div>
-                    <div className="Box-Info">
-                        <img src={Icon4} alt="Search"/>
-                        <div className="padding-lateral">
-                            <p className="Info-Text color-cyan m-none"><strong>Orden</strong></p>
-                            <p className="Info-Text m-none">
-                                La data está organizada por orden alfabético.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="Box">
-                    {/*<div className="Box-Info">
-                        <img src={Icon3} alt="Search"/>
-                        <div className="padding-lateral">
-                            <p className="Info-Text color-cyan m-none"><strong>Periodo de análisis</strong></p>
-                            <p className="Info-Text m-none">
-                                La información ofrecida reúne datos desde los tres últimos años. 
-                            </p>
-                        </div>
-    </div>*/}
-                        <div className="Box-Info">
                         <img src={Icon2} alt="Search"/>
                         <div className="padding-lateral">
                             <p className="Info-Text color-cyan m-none"><strong>Número de medicamentos</strong></p>
                             <p className="Info-Text m-none">
                             Los datos que tenemos incluye los precios de más de 4,000
                             medicamentos, ofrecidos por boticas y farmacias privadas.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="Box-Info">
+                        <img src={Icon1} alt="Search"/>
+                        <div className="padding-lateral">
+                            <p className="Info-Text color-cyan m-none"><strong>Fuente</strong></p>
+                            <p className="Info-Text m-none">
+                                Los datos se recogen del Observatorio de la Dirección General de Medicamentos
+                                (DIGEMID).
                             </p>
                         </div>
                     </div>
@@ -79,6 +59,26 @@ const DatosAbiertos = () =>{
                             </p>
                         </div>
                     </div>
+                    {/*<div className="Box-Info">
+                        <img src={Icon4} alt="Search"/>
+                        <div className="padding-lateral">
+                            <p className="Info-Text color-cyan m-none"><strong>Orden</strong></p>
+                            <p className="Info-Text m-none">
+                                La data está organizada por orden alfabético.
+                            </p>
+                        </div>
+    </div>*/}
+                </div>
+                <div className="Box">
+                    {/*<div className="Box-Info">
+                        <img src={Icon3} alt="Search"/>
+                        <div className="padding-lateral">
+                            <p className="Info-Text color-cyan m-none"><strong>Periodo de análisis</strong></p>
+                            <p className="Info-Text m-none">
+                                La información ofrecida reúne datos desde los tres últimos años. 
+                            </p>
+                        </div>
+    </div>*/}
                 </div>
             </div>
         </div>

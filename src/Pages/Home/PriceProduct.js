@@ -52,7 +52,7 @@ const PriceProduct = () => {
                     setMessage(data.message)
                     let aux = prices.concat(data.precios)
                     if (data.precios !== null) setPrices(aux)
-                    else setMessage(`No se encontro precios del producto ${producto} en ${presentacion} de ${concentracion}`)
+                    else setMessage(`No se encontró precios del producto ${producto} en ${presentacion} de ${concentracion}`)
 
                     ordenarxPrecio();
                     setTotalProducts(data.total)

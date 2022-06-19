@@ -18,7 +18,9 @@ const Modal = (props) => {
                     Encontrarás varias opciones de diferentes laboratorios.
                 </p>
                 <p className="Modal-parraf">
-                    FarmaCheck es una iniciativa de la Asociación de EPS (APEPS) y la Asociación Peruana de Empresas de Seguros (APESEG) por brindan información oportuna y transparente al público que busca medicinas a precios competitivos.
+                    FarmaCheck es una iniciativa de la Asociación Peruana de Entidades Prestadoras de Salud (APEPS) y la Asociación Peruana de Empresas 
+                    de Seguros (APESEG) por brindan información oportuna y transparente al público que busca medicinas 
+                    a precios competitivos.
                 </p>
                 <i className="fas fa-times cros-modal" onClick={handleClick}></i>
             </div>

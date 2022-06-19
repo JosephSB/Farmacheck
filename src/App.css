@@ -517,13 +517,26 @@
 }
 .Box{
     width: 100%;
-    max-width: 470px;
     margin-bottom: 30px;
     text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+/*
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    justify-content: center;*/
 }
 .Box-Info{
+    max-width: 400px;
+    margin: 10px auto;
     flex-wrap: nowrap;
     justify-content: flex-start;
+}
+.Box-Info img{
+    width: 50px;
 }
 
 /*--------------Page-Error----------------*/

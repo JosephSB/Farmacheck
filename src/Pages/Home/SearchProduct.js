@@ -35,7 +35,7 @@ const SearchProduct = () =>{
                 setMessage(data.message)
                 let aux = products.concat(data.productos);
                 if(data.productos !== null) setProducts(aux)
-                else setMessage(`No se Encontro el producto ${product}`)
+                else setMessage(`No se encontró el producto ${product}`)
 
                 BtnMoreProducts(aux.length,data.total)
             }

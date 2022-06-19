@@ -30,8 +30,8 @@ const DetailProduct = () =>{
             if(data.errorCode === 0){
                 setMessage(data.message)
                 if(data.presentaciones !== null ) setData(data.presentaciones)
-                else setMessage(`No se encontro mas información del producto ${product}`)
-                if(data.presentaciones.length === 0)setMessage(`No se encontro mas información del producto ${product}`)
+                else setMessage(`No se encontró más información del producto ${product}`)
+                if(data.presentaciones.length === 0)setMessage(`No se encontró más información del producto ${product}`)
             }
         }).finally( ()=> setLoader(false) )
     }, []);

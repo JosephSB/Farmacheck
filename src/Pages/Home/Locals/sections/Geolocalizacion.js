@@ -101,7 +101,7 @@ const GeoLocalizacion = (props) => {
         return <Loader message={"Buscando locales en tu ubicacion"}/>
     }
     if(data.length === 0){
-        return <p className="Banner__Text4--option">{`No se encontro ${dataSearch.producto} en ${dataSearch.provincia}, ${dataSearch.distrito}`}</p>
+        return <p className="Banner__Text4--option">{`No se encontró ${dataSearch.producto} en ${dataSearch.provincia}, ${dataSearch.distrito}`}</p>
     }
 
     window.document.body.classList.add('bg-image')
